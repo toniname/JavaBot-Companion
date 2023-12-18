@@ -1,7 +1,7 @@
-package org.example.currecy.NBU.impl;
+package org.example.currecy.impl;
 
 
-import static org.example.currecy.NBU.CurrencyNBU.XAU;
+import static org.example.currecy.CurrencyNBU.XAU;
 
 public class CSNBUTest {
 	public static void main(String[] args) {

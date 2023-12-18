@@ -1,11 +1,11 @@
-package org.example.currecy.NBU.impl;
+package org.example.currecy.impl;
 
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.example.currecy.NBU.CurrencyNBU;
-import org.example.currecy.NBU.CurrencyServiceNBU;
-import org.example.currecy.NBU.dto.CurrencyItemDtoNBU;
+import org.example.currecy.CurrencyNBU;
+import org.example.currecy.CurrencyServiceNBU;
+import org.example.currecy.dto.CurrencyItemDtoNBU;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;

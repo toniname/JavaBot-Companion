@@ -1,9 +1,9 @@
-package org.example.currecy.NBU.dto;
+package org.example.currecy.dto;
 
 
 import lombok.Builder;
 import lombok.Data;
-import org.example.currecy.NBU.CurrencyNBU;
+import org.example.currecy.CurrencyNBU;
 
 
 @Data

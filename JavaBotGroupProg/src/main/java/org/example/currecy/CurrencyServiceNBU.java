@@ -1,4 +1,4 @@
-package org.example.currecy.NBU;
+package org.example.currecy;
 
 public interface CurrencyServiceNBU {
 
