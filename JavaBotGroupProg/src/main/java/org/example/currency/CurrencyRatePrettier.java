@@ -1,6 +1,4 @@
-package org.example.currecy;
-
-import org.example.currecy.Currency;
+package org.example.currency;
 
 public interface CurrencyRatePrettier {
 

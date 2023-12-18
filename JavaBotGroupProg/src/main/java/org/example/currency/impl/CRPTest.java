@@ -1,6 +1,6 @@
-package org.example.currecy.impl;
+package org.example.currency.impl;
 
-import org.example.currecy.Currency;
+import org.example.currency.Currency;
 
 public class CRPTest {
 

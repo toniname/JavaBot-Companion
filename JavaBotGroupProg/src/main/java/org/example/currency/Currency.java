@@ -1,4 +1,4 @@
-package org.example.currecy;
+package org.example.currency;
 
 public enum Currency {
 

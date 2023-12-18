@@ -1,7 +1,7 @@
-package org.example.currecy.impl;
+package org.example.currency.impl;
 
-import org.example.currecy.Currency;
-import org.example.currecy.CurrencyRatePrettier;
+import org.example.currency.Currency;
+import org.example.currency.CurrencyRatePrettier;
 
 import java.math.RoundingMode;
 import java.text.DecimalFormat;

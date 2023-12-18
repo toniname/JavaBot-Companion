@@ -1,10 +1,10 @@
-package org.example.currecy.impl;
+package org.example.currency.impl;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.example.currecy.Currency;
-import org.example.currecy.CurrencyService;
-import org.example.currecy.dto.CurrencyItemDto;
+import org.example.currency.Currency;
+import org.example.currency.CurrencyService;
+import org.example.currency.dto.CurrencyItemDto;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
