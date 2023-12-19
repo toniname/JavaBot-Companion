@@ -9,20 +9,18 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import java.util.Arrays;
-import java.util.Collections;
+
 import java.util.List;
 
+public class SelectPrecisoin extends BotCommand {
 
-public class SelectBank extends BotCommand {
-
-    public SelectBank() {
-        super("selectBank", "select specific bank");
+    public SelectPrecisoin() {
+        super("/setprecision", "set n of digits after floating point");
     }
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select bank";
+        String text = "Select number of digits after floating point";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
@@ -30,24 +28,30 @@ public class SelectBank extends BotCommand {
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Mono" + SelectedOptions.isBankSelected("mono"))
-                .callbackData("mono")
+                .text("1" + SelectedOptions.isSelectedPrecision("1"))
+                .callbackData("setprecision 1")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Pryvat" + SelectedOptions.isBankSelected("pryvat"))
-                .callbackData("pryvat")
+                .text("2" + SelectedOptions.isSelectedPrecision("2"))
+                .callbackData("setprecision 2")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
-                .text("NBU" + SelectedOptions.isBankSelected("nbu"))
-                .callbackData("nbu")
+                .text("3" + SelectedOptions.isSelectedPrecision("3"))
+                .callbackData("setprecision 3")
+                .build();
+
+        InlineKeyboardButton btn4 = InlineKeyboardButton
+                .builder()
+                .text("4" + SelectedOptions.isSelectedPrecision("4"))
+                .callbackData("setprecision 4")
                 .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3)))
+                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4)))
                 .build();
 
         sm.setReplyMarkup(ikm);
