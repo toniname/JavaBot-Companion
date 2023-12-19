@@ -33,6 +33,11 @@ public class MonoCurrencyService implements CurrencyService {
         return neededDto.getRateBuy();
     }
 
+    @Override
+    public double getRate(Currency ccy) throws IOException {
+        return getBuyRate(ccy);
+    }
+
     public MonoBankDTO getDtoObject(Currency ccy) throws IOException {
 
         if ((System.currentTimeMillis() / 1000L) - lastRequestTime > cacheTime)

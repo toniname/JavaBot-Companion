@@ -1,21 +1,20 @@
-package org.example.currecy.impl;
+package org.example.currecy.impl.nbu;
 
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.example.currecy.CurrencyNBU;
-import org.example.currecy.CurrencyServiceNBU;
 import org.example.currecy.dto.CurrencyItemDtoNBU;
+import org.example.currecy.impl.Currency;
+import org.example.currecy.impl.CurrencyService;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class CurrencyServiceImplNBU implements CurrencyServiceNBU {
+public class CurrencyServiceImplNBU implements CurrencyService {
 
-	@Override
-	public double getRate(CurrencyNBU cc) {
+	public double getRate(Currency cc) {
 		String urlNBU = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json";
 
 		String jsonStringNBU = "";

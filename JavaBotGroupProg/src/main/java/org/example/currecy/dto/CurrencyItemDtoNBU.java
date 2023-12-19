@@ -3,7 +3,7 @@ package org.example.currecy.dto;
 
 import lombok.Builder;
 import lombok.Data;
-import org.example.currecy.CurrencyNBU;
+import org.example.currecy.impl.Currency;
 
 
 @Data
@@ -23,6 +23,6 @@ public class CurrencyItemDtoNBU {
 	public int r030;
 	public String txt;
 	public double rate;
-	public CurrencyNBU cc;
+	public Currency cc;
 	public String exchangedate;
 }

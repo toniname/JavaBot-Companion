@@ -1,4 +1,6 @@
-package org.example.currecy.impl;
+package org.example.currecy.impl.pretiers;
+
+import org.example.currecy.impl.Currency;
 
 public class CurrencyRatePrettierImpl implements CurrencyRatePrettier {
 
