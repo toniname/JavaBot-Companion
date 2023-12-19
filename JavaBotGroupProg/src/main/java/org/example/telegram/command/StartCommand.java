@@ -29,13 +29,13 @@ public class StartCommand extends BotCommand {
 
         InlineKeyboardButton usdButton = InlineKeyboardButton
                 .builder()
-                .text("USD")
-                .callbackData("USD")
+                .text("Settings")
+                .callbackData("settings")
                 .build();
         InlineKeyboardButton eurButton = InlineKeyboardButton
                 .builder()
-                .text("EUR")
-                .callbackData("EUR")
+                .text("Get info")
+                .callbackData("info")
                 .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()

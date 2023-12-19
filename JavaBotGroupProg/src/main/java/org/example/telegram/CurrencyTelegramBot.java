@@ -5,10 +5,14 @@ import org.example.currency.CurrencyRatePrettier;
 import org.example.currency.CurrencyService;
 import org.example.currency.impl.CurrencyRatePrettierImpl;
 import org.example.currency.impl.CurrencyServiceImpl;
+import org.example.telegram.command.SelectBank;
+import org.example.telegram.command.SettingsCommand;
 import org.example.telegram.command.StartCommand;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
+import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
+
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
@@ -20,6 +24,8 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         currencyService = new CurrencyServiceImpl();
         currencyRatePrettier = new CurrencyRatePrettierImpl();
         register(new StartCommand());
+        register(new SettingsCommand());
+        register(new SelectBank());
     }
 
     @Override
@@ -49,21 +55,37 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             }
         }
 
-        if (update.hasCallbackQuery()) {
-            String data = update.getCallbackQuery().getData();
-            String prettyRate = getRate(data);
 
-            SendMessage sm = new SendMessage();
-            sm.setText(prettyRate);
-            sm.setChatId(update.getCallbackQuery().getMessage().getChatId());
+        if (update.hasCallbackQuery()) {
+            BotCommand cm;
+            String data = update.getCallbackQuery().getData();
+            System.out.println(data);
+
+            switch (data) {
+                case "settings" -> cm =  new SettingsCommand();
+                case "bank" -> cm = new SelectBank();
+                default -> {
+                    return;
+                }
+            }
 
             try {
-                execute(sm);
-            } catch (TelegramApiException e) {
+                cm.execute(this,
+                        update.getCallbackQuery().getMessage().getFrom(),
+                        update.getCallbackQuery().getMessage().getChat(),
+                        null
+                        );
+
+            } catch (Exception e) {
+                e.printStackTrace();
                 System.out.println("something went wrong");
             }
         }
     }
+
+
+
+
 
     private String getRate(String ccy) {
         Currency currency = Currency.valueOf(ccy);
