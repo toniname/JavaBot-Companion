@@ -17,6 +17,7 @@ import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
@@ -25,7 +26,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
 
     @Getter
-    public static HashMap<Chat, SelectedOptions> usersOptions = new HashMap<>();
+    private static final Map<Chat, SelectedOptions> usersOptions = new HashMap<>();
 
 
     public CurrencyTelegramBot() {
@@ -43,16 +44,16 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     }
 
     @Override
-    public String getBotToken() {
-        return LoginAndToken.TOKEN;
-    }
+    public String getBotToken() { return LoginAndToken.TOKEN; }
+
+
 
     @Override
     public void processNonCommandUpdate(Update update) {
         if (!usersOptions.containsKey(update.getCallbackQuery().getMessage().getChat()))
             usersOptions.put(update.getCallbackQuery().getMessage().getChat(), new SelectedOptions());
 
-        if (update.hasMessage()) {
+//        if (update.hasMessage()) {
 //            String receivedText = update.getMessage().getText();
 //
 //            SendMessage sm = new SendMessage();
@@ -64,36 +65,33 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 //            } catch (TelegramApiException e) {
 //                System.out.println("something went wrong");
 //            }
-        }
+//        }
 
         if (update.hasCallbackQuery()) {
-            BotCommand cm = null;
-            String data = update.getCallbackQuery().getData();
-            System.out.println(data);
+            BotCommand command = null;
+            String callbackData = update.getCallbackQuery().getData();
+
+            System.out.println(callbackData);
 
 
-
-
-            if (data.contains("setprecision")) {
-                setPrecision(data, update);
-                data = "precision";
+            if (callbackData.contains("setprecision")) {
+                setPrecision(callbackData, update);
+                callbackData = "precision";
             }
 
-            switch (data) {
-                case "settings" -> cm =  new SettingsCommand();
-                case "bank" -> cm = new SelectBank();
-                case "precision" -> cm = new SelectPrecisoin();
-
+            switch (callbackData) {
+                case "settings" -> command =  new SettingsCommand();
+                case "bank" -> command = new SelectBank();
+                case "precision" -> command = new SelectPrecisoin();
                 case "mono", "nbu", "pryvat" -> {
-                    usersOptions.get(update.getCallbackQuery().getMessage().getChat())
-                            .setSelectedBank(data);
-                    cm = new SelectBank();
+                    usersOptions.get(update.getCallbackQuery().getMessage().getChat()).setSelectedBank(callbackData);
+                    command = new SelectBank();
                 }
             }
 
             try {
-                if (cm == null) return;
-                cm.execute(this,
+                if (command == null) return;
+                command.execute(this,
                         update.getCallbackQuery().getMessage().getFrom(),
                         update.getCallbackQuery().getMessage().getChat(),
                         null
@@ -104,7 +102,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             }
         }
     }
-
 
 
     private void setPrecision(String s, Update update) {
