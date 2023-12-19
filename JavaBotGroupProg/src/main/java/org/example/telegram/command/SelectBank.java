@@ -1,6 +1,7 @@
 package org.example.telegram.command;
 
-import org.example.telegram.SelectedOptions;
+import org.example.telegram.CurrencyTelegramBot;
+import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -9,8 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import java.util.Arrays;
-import java.util.Collections;
+
 import java.util.List;
 
 
@@ -27,22 +27,23 @@ public class SelectBank extends BotCommand {
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
+        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat);
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Mono" + SelectedOptions.isBankSelected("mono"))
+                .text("Mono" + selectedOptions.isBankSelected("mono"))
                 .callbackData("mono")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Pryvat" + SelectedOptions.isBankSelected("pryvat"))
+                .text("Pryvat" + selectedOptions.isBankSelected("pryvat"))
                 .callbackData("pryvat")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
-                .text("NBU" + SelectedOptions.isBankSelected("nbu"))
+                .text("NBU" + selectedOptions.isBankSelected("nbu"))
                 .callbackData("nbu")
                 .build();
 

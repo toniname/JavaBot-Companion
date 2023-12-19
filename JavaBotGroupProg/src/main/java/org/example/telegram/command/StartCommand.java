@@ -1,5 +1,7 @@
 package org.example.telegram.command;
 
+import org.example.telegram.CurrencyTelegramBot;
+import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -43,6 +45,8 @@ public class StartCommand extends BotCommand {
                 .build();
 
         sm.setReplyMarkup(ikm);
+
+        CurrencyTelegramBot.getUsersOptions().put(chat, new SelectedOptions());
 
         try {
             absSender.execute(sm);
