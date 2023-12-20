@@ -29,24 +29,24 @@ public class StartCommand extends BotCommand {
         sm.setText(text);
         sm.setChatId(chat.getId());
 
-        InlineKeyboardButton usdButton = InlineKeyboardButton
+        InlineKeyboardButton settingsButton = InlineKeyboardButton
                 .builder()
                 .text("Settings")
                 .callbackData("settings")
                 .build();
-        InlineKeyboardButton eurButton = InlineKeyboardButton
+        InlineKeyboardButton infoButton = InlineKeyboardButton
                 .builder()
                 .text("Get info")
                 .callbackData("info")
                 .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(Collections.singletonList(Arrays.asList(usdButton, eurButton)))
+                .keyboard(Collections.singletonList(Arrays.asList(settingsButton, infoButton)))
                 .build();
 
         sm.setReplyMarkup(ikm);
 
-        CurrencyTelegramBot.getUsersOptions().put(chat, new SelectedOptions());
+        CurrencyTelegramBot.getUsersOptions().put(chat.getId(), new SelectedOptions());
 
         try {
             absSender.execute(sm);

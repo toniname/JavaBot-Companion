@@ -26,7 +26,7 @@ public class SelectPrecisoin extends BotCommand {
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
-        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat);
+        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()

@@ -13,16 +13,14 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
 
-
-public class SelectBank extends BotCommand {
-
-    public SelectBank() {
-        super("selectBank", "select specific bank");
+public class SelectCurrency extends BotCommand {
+    public SelectCurrency() {
+        super("selectCurrency", "select Currency");
     }
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select bank";
+        String text = "Select currency";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
@@ -31,24 +29,19 @@ public class SelectBank extends BotCommand {
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Mono" + selectedOptions.isBankSelected("mono"))
-                .callbackData("mono")
+                .text("USD" + selectedOptions.isSelectedCurrency("usd"))
+                .callbackData("usd")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Pryvat" + selectedOptions.isBankSelected("pryvat"))
-                .callbackData("pryvat")
+                .text("EUR" + selectedOptions.isSelectedCurrency("eur"))
+                .callbackData("eur")
                 .build();
 
-        InlineKeyboardButton btn3 = InlineKeyboardButton
-                .builder()
-                .text("NBU" + selectedOptions.isBankSelected("nbu"))
-                .callbackData("nbu")
-                .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3)))
+                .keyboard(List.of(List.of(btn1), List.of(btn2)))
                 .build();
 
         sm.setReplyMarkup(ikm);
@@ -60,3 +53,4 @@ public class SelectBank extends BotCommand {
         }
     }
 }
+
