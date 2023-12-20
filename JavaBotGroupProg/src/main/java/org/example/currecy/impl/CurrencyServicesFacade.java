@@ -2,6 +2,7 @@ package org.example.currecy.impl;
 
 import org.example.currecy.impl.mono.MonoCurrencyService;
 import org.example.currecy.impl.nbu.CurrencyServiceImplNBU;
+import org.example.currecy.impl.pb.CurrencyServiceImplPB;
 
 import java.io.IOException;
 
@@ -15,7 +16,7 @@ public class CurrencyServicesFacade {
         switch (bank) {
             case NBU -> currencyService = new CurrencyServiceImplNBU();
             case MONO -> currencyService = new MonoCurrencyService();
-//            case PRYVAT -> ;
+            case PRYVAT -> currencyService =  new CurrencyServiceImplPB();
         }
     }
 

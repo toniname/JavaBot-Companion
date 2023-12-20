@@ -2,7 +2,7 @@ package org.example.currecy.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.example.currecy.Currency;
+import org.example.currecy.impl.Currency;
 
 @Data
 @AllArgsConstructor

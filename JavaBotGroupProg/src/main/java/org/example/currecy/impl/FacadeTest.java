@@ -13,6 +13,7 @@ public class FacadeTest {
         try {
             System.out.println(service.getRate(Currency.USD, Banks.MONO));
             System.out.println(service.getRate(Currency.USD, Banks.NBU));
+            System.out.println(service.getRate(Currency.USD, Banks.PRYVAT));
 
         } catch (IOException e) {
             throw new RuntimeException(e);
