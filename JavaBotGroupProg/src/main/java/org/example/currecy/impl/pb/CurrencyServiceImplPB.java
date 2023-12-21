@@ -1,10 +1,11 @@
-package org.example.currecy.impl;
+package org.example.currecy.impl.pb;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import org.example.currecy.Currency;
-import org.example.currecy.CurrencyService;
+
 import org.example.currecy.dto.CurrencyItemDtoPB;
+import org.example.currecy.impl.Currency;
+import org.example.currecy.impl.CurrencyService;
 import org.jsoup.Jsoup;
 
 import java.io.IOException;
@@ -30,11 +31,13 @@ public class CurrencyServiceImplPB implements CurrencyService {
         List<CurrencyItemDtoPB> list = new Gson().fromJson(text, type);
 
         String s = list.stream()
-                .filter(c -> c.getCcy() == ccy)
+                .filter(c -> c.getCcy().equals(ccy))
                 .filter(c -> c.getBase_ccy() == Currency.UAH)
                 .map(c -> c.getBuy())
                 .findFirst()
                 .orElseThrow();
         return Double.valueOf(s);
     }
+
+
 }
