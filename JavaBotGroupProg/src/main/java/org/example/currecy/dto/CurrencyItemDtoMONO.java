@@ -3,7 +3,7 @@ package org.example.currecy.dto;
 import lombok.Data;
 
 @Data
-public class MonoBankDTO {
+public class CurrencyItemDtoMONO {
     public int currencyCodeA;
     public int currencyCodeB;
     public int date;

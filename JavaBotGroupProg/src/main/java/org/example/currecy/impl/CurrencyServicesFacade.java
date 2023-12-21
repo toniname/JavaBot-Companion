@@ -1,6 +1,6 @@
 package org.example.currecy.impl;
 
-import org.example.currecy.impl.mono.MonoCurrencyService;
+import org.example.currecy.impl.mono.CurrencyServiceImplMONO;
 import org.example.currecy.impl.nbu.CurrencyServiceImplNBU;
 import org.example.currecy.impl.pb.CurrencyServiceImplPB;
 
@@ -15,7 +15,7 @@ public class CurrencyServicesFacade {
     private void setBank(Banks bank) {
         switch (bank) {
             case NBU -> currencyService = new CurrencyServiceImplNBU();
-            case MONO -> currencyService = new MonoCurrencyService();
+            case MONO -> currencyService = new CurrencyServiceImplMONO();
             case PRYVAT -> currencyService =  new CurrencyServiceImplPB();
         }
     }
