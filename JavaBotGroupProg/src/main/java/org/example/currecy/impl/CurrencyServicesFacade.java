@@ -10,8 +10,6 @@ public class CurrencyServicesFacade {
 
     CurrencyService currencyService;
 
-
-    /*TO DO*/
     private void setBank(Banks bank) {
         switch (bank) {
             case NBU -> currencyService = new CurrencyServiceImplNBU();
