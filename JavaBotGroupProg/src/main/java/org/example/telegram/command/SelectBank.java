@@ -22,7 +22,7 @@ public class SelectBank extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select bank";
+        String text = "Оберіть банк";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);

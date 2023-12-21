@@ -1,6 +1,8 @@
 package org.example.telegram;
 
 import lombok.Getter;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.example.currency.impl.Currency;
 import org.example.currency.CurrencyRatePrettier;
 import org.example.currency.CurrencyService;
@@ -21,8 +23,9 @@ import java.util.Map;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
-    private final CurrencyService currencyService;
+    private CurrencyService currencyService;
     private final CurrencyRatePrettier currencyRatePrettier;
+    private static final Log log = LogFactory.getLog(CurrencyTelegramBot.class);
 
 
     @Getter
@@ -58,7 +61,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             SendMessage sm = new SendMessage();
             sm.setChatId(update.getMessage().getChatId());
 
-            /*case when user changes time*/
             if (usersOptions.get(update.getMessage().getChatId()).isEnableTimeSelection()) {
                 if (usersOptions.get(update.getMessage().getChatId()).setTime(receivedText))
                     sm.setText("Time of notifications is set to: " + receivedText);
@@ -69,7 +71,8 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             try {
                 execute(sm);
             } catch (TelegramApiException e) {
-                System.out.println("something went wrong");
+                e.printStackTrace();
+                log.error("something went wrong");
             }
         }
 
@@ -108,15 +111,17 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
             try {
                 if (command == null) return;
-                command.execute(this,
-                        update.getCallbackQuery().getMessage().getFrom(),
-                        update.getCallbackQuery().getMessage().getChat(),
-                        null
-                );
+                if (update.getCallbackQuery() != null && update.getCallbackQuery().getMessage() != null && update.getCallbackQuery().getData() != null) {
+                    command.execute(this,
+                                            update.getCallbackQuery().getMessage().getFrom(),
+                                            update.getCallbackQuery().getMessage().getChat(),
+                                            null
+                                    );
+                }
+
             } catch (Exception e) {
                 e.printStackTrace();
-                System.out.println("something went wrong");
-            }
+                log.error("something went wrong", e);            }
         }
 
         usersOptions.forEach((k, v) -> System.out.println(k + "  " +  v));
