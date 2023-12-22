@@ -1,6 +1,7 @@
 package org.example.currency;
 
-public interface CurrencyRatePrettier {
 
-    String pretty(double rate, Currency ccy);
+public interface CurrencyRatePrettier {
+    String pretty(double buyRate, double saleRate, Currency ccy);
+
 }

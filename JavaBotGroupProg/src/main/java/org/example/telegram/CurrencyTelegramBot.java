@@ -1,11 +1,14 @@
 package org.example.telegram;
 
 import lombok.Getter;
-import org.example.currency.Currency;
+import org.example.currency.impl.Banks;
+import org.example.currency.impl.mono.CurrencyServiceImplMONO;
+import org.example.currency.impl.nbu.CurrencyServiceImplNBU;
+import org.example.currency.impl.pb.CurrencyServiceImplPB;
+import org.example.currency.impl.Currency;
 import org.example.currency.CurrencyRatePrettier;
-import org.example.currency.CurrencyService;
-import org.example.currency.impl.CurrencyRatePrettierImpl;
-import org.example.currency.impl.CurrencyServiceImpl;
+import org.example.currency.impl.CurrencyService;
+import org.example.currency.sort.CurrencyRatePrettierImpl;
 import org.example.telegram.command.*;
 import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
@@ -14,13 +17,15 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
-    private final CurrencyService currencyService;
+
     private final CurrencyRatePrettier currencyRatePrettier;
+    private CurrencyService currencyService;
 
 
     @Getter
@@ -28,7 +33,14 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
 
     public CurrencyTelegramBot() {
-        currencyService = new CurrencyServiceImpl();
+        Banks defaultBank = Banks.PRYVAT;
+        switch (defaultBank) {
+            case NBU -> currencyService = new CurrencyServiceImplNBU();
+            case MONO -> currencyService = new CurrencyServiceImplMONO();
+            case PRYVAT -> currencyService = new CurrencyServiceImplPB();
+        }
+
+
         currencyRatePrettier = new CurrencyRatePrettierImpl();
         register(new StartCommand());
         register(new SettingsCommand());
@@ -44,15 +56,16 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     }
 
     @Override
-    public String getBotToken() { return LoginAndToken.TOKEN; }
-
+    public String getBotToken() {
+        return LoginAndToken.TOKEN;
+    }
 
 
     @Override
     public void processNonCommandUpdate(Update update) {
 
         if (update.hasMessage()) {
-           String receivedText = update.getMessage().getText();
+            String receivedText = update.getMessage().getText();
             SendMessage sm = new SendMessage();
             sm.setChatId(update.getMessage().getChatId());
 
@@ -69,7 +82,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             } catch (TelegramApiException e) {
                 System.out.println("something went wrong");
             }
-       }
+        }
 
         if (update.hasCallbackQuery()) {
             BotCommand command = null;
@@ -83,11 +96,10 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             }
 
             switch (callbackData) {
-                case "settings" -> command =  new SettingsCommand();
+                case "settings" -> command = new SettingsCommand();
                 case "bank" -> command = new SelectBank();
-                case "usd" , "eur" ->
-                {
-                    setCurrency(callbackData,update);
+                case "usd", "eur" -> {
+                    setCurrency(callbackData, update);
                     command = new SelectCurrency();
                 }
 
@@ -97,8 +109,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                     usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setSelectedBank(callbackData);
                     command = new SelectBank();
                 }
-                case "time" ->
-                {
+                case "time" -> {
                     command = new SelectTime();
                     usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setEnableTimeSelection(true);
                 }
@@ -110,21 +121,22 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                         update.getCallbackQuery().getMessage().getFrom(),
                         update.getCallbackQuery().getMessage().getChat(),
                         null
-                        );
+                );
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("something went wrong");
             }
         }
 
-        usersOptions.forEach((k, v) -> System.out.println(k + "  " +  v));
+        usersOptions.forEach((k, v) -> System.out.println(k + "  " + v));
 
     }
 
     private void setPrecision(String s, Update update) {
         usersOptions.get(update.getCallbackQuery().getMessage().getChatId())
-                .setPrecision(s.substring(s.length()-1));
+                .setPrecision(s.substring(s.length() - 1));
     }
+
     private void setCurrency(String s, Update update) {
         usersOptions.get(update.getCallbackQuery().getMessage().getChatId())
                 .setCurrency(s);
@@ -132,8 +144,4 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
 
 
-    private String getRate(String ccy) {
-        Currency currency = Currency.valueOf(ccy);
-        return currencyRatePrettier.pretty(currencyService.getRate(currency), currency);
-    }
 }
