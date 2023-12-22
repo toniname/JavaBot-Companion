@@ -11,44 +11,47 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.util.List;
-
+import java.util.Arrays;
+import java.util.Collections;
 
 public class SelectBank extends BotCommand {
 
     public SelectBank() {
-        super("selectBank", "select specific bank");
+        super("selectBank", "Оберіть банк");
     }
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Оберіть банк";
+        String text = "Выберите банк";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
-        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
+        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
+        if (selectedOptions == null) {
+            selectedOptions = new SelectedOptions();
+        }
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
                 .text("Mono" + selectedOptions.isBankSelected("mono"))
-                .callbackData("mono")
+                .callbackData("selectBank mono")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
                 .text("Pryvat" + selectedOptions.isBankSelected("pryvat"))
-                .callbackData("pryvat")
+                .callbackData("selectBank pryvat")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
                 .text("NBU" + selectedOptions.isBankSelected("nbu"))
-                .callbackData("nbu")
+                .callbackData("selectBank nbu")
                 .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3)))
+                .keyboard(Collections.singletonList(Arrays.asList(btn1, btn2, btn3)))
                 .build();
 
         sm.setReplyMarkup(ikm);

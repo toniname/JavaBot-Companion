@@ -9,7 +9,6 @@ import org.jsoup.Jsoup;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
-
 import java.util.List;
 
 public class CurrencyServiceImplMONO implements CurrencyService {
@@ -17,7 +16,7 @@ public class CurrencyServiceImplMONO implements CurrencyService {
     static String url = "https://api.monobank.ua/bank/currency";
     List<CurrencyItemDtoMONO> allCurrencies;
 
-    private final long cacheTime = 5 * 60; //time of using cached data in seconds
+    private final long cacheTime = 5 * 60;
     private long lastRequestTime;
 
     @Override

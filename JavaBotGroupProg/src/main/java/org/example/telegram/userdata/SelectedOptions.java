@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class SelectedOptions {
 
-    private  Map<String, String> banks = new HashMap<>();
-    private  String precision = "2";
-    private  String currency = "usd";
-
+    private Map<String, String> banks = new HashMap<>();
+    private String bank = "NBU";
+    private String precision = "2";
+    private String currency = "usd";
     private String time = null;
 
     @Getter
@@ -26,13 +26,13 @@ public class SelectedOptions {
         this.enableTimeSelection = enableTimeSelection;
     }
 
-    public  void setDefault() {
+    public void setDefault() {
         banks.put("mono", "✅");
         banks.put("pryvat", "");
         banks.put("nbu", "");
     }
 
-    public  void setSelectedBank(String key) {
+    public void setSelectedBank(String key) {
         banks.replaceAll((k, v) -> "");
         banks.replace(key, "✅");
     }
@@ -47,7 +47,7 @@ public class SelectedOptions {
             return false;
         }
 
-        if (intTime >= 9 && intTime <= 18 ) {
+        if (intTime >= 9 && intTime <= 18) {
             this.time = timeToSet;
             return true;
         } else {
@@ -56,11 +56,11 @@ public class SelectedOptions {
         }
     }
 
-    public  String isBankSelected(String key) {
+    public String isBankSelected(String key) {
         return banks.get(key);
     }
 
-    public  String isSelectedPrecision(String key) {
+    public String isSelectedPrecision(String key) {
         if (precision.equals(key))
             return "✅";
         return "";
@@ -71,7 +71,7 @@ public class SelectedOptions {
         this.precision = precision;
     }
 
-    public  String isSelectedCurrency(String key) {
+    public String isSelectedCurrency(String key) {
         if (currency.equals(key))
             return "✅";
         return "";

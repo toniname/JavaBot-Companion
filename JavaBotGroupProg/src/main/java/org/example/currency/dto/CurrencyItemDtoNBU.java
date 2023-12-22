@@ -8,9 +8,11 @@ import org.example.currency.impl.Currency;
 @Builder
 public class CurrencyItemDtoNBU {
 
-	public int r030;
-	public String txt;
-	public double rate;
-	public Currency cc;
-	public String exchangedate;
+    public int r030;
+    public String txt;
+    public double rate;
+    public Currency cc;
+    public String exchangedate;
+    public double rateBuy;
+    public double rateSell;
 }

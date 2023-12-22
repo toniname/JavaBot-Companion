@@ -8,13 +8,13 @@ import java.io.IOException;
 
 public class CurrencyServicesFacade {
 
-    CurrencyService currencyService;
+    private CurrencyService currencyService;
 
     private void setBank(Banks bank) {
         switch (bank) {
             case NBU -> currencyService = new CurrencyServiceImplNBU();
             case MONO -> currencyService = new CurrencyServiceImplMONO();
-            case PRYVAT -> currencyService =  new CurrencyServiceImplPB();
+            case PRYVAT -> currencyService = new CurrencyServiceImplPB();
         }
     }
 

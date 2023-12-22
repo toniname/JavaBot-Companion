@@ -6,10 +6,8 @@ import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
@@ -30,7 +28,6 @@ public class SelectTime extends BotCommand {
         sm.setChatId(chat.getId());
         SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat);
 
-
         sm.setReplyMarkup(createKeyboardMarkup());
 
         try {
@@ -40,43 +37,35 @@ public class SelectTime extends BotCommand {
         }
     }
 
-    private KeyboardButton creatKeyboardButton (String txt){
-        return KeyboardButton
-                .builder()
-                .text(txt)
+    private InlineKeyboardButton createInlineKeyboardButton(String text, String callbackData) {
+        return InlineKeyboardButton.builder()
+                .text(text)
+                .callbackData(callbackData)
                 .build();
     }
 
-    private  ReplyKeyboardMarkup createKeyboardMarkup() {
-        KeyboardButton btn1 = creatKeyboardButton("9");
-        KeyboardButton btn2 = creatKeyboardButton("10");
-        KeyboardButton btn3 = creatKeyboardButton("11");
-        KeyboardButton btn4 = creatKeyboardButton("12");
-        KeyboardButton btn5 = creatKeyboardButton("13");
-        KeyboardButton btn6 = creatKeyboardButton("14");
-        KeyboardButton btn7 = creatKeyboardButton("15");
-        KeyboardButton btn8 = creatKeyboardButton("16");
-        KeyboardButton btn9 = creatKeyboardButton("17");
-        KeyboardButton btn10 = creatKeyboardButton("18");
-        KeyboardButton btn11 = creatKeyboardButton("Вимкнути сповіщення");
-        KeyboardRow keyboardRow1 = new KeyboardRow();
-        keyboardRow1.add(btn1);
-        keyboardRow1.add(btn2);
-        keyboardRow1.add(btn3);
-        KeyboardRow keyboardRow2 = new KeyboardRow();
-        keyboardRow2.add(btn4);
-        keyboardRow2.add(btn5);
-        keyboardRow2.add(btn6);
-        KeyboardRow keyboardRow3 = new KeyboardRow();
-        keyboardRow3.add(btn7);
-        keyboardRow3.add(btn8);
-        keyboardRow3.add(btn9);
-        KeyboardRow keyboardRow4 = new KeyboardRow();
-        keyboardRow4.add(btn10);
-        keyboardRow4.add(btn11);
+    private InlineKeyboardMarkup createKeyboardMarkup() {
+        InlineKeyboardButton btn1 = createInlineKeyboardButton("9", "9");
+        InlineKeyboardButton btn2 = createInlineKeyboardButton("10", "10");
+        InlineKeyboardButton btn3 = createInlineKeyboardButton("11", "11");
+        InlineKeyboardButton btn4 = createInlineKeyboardButton("12", "12");
+        InlineKeyboardButton btn5 = createInlineKeyboardButton("13", "13");
+        InlineKeyboardButton btn6 = createInlineKeyboardButton("14", "14");
+        InlineKeyboardButton btn7 = createInlineKeyboardButton("15", "15");
+        InlineKeyboardButton btn8 = createInlineKeyboardButton("16", "16");
+        InlineKeyboardButton btn9 = createInlineKeyboardButton("17", "17");
+        InlineKeyboardButton btn10 = createInlineKeyboardButton("18", "18");
+        InlineKeyboardButton btn11 = createInlineKeyboardButton("Вимкнути сповіщення", "disable_notifications");
 
-        ReplyKeyboardMarkup ikm = ReplyKeyboardMarkup.builder()
-                .keyboard(List.of(keyboardRow1, keyboardRow2, keyboardRow3, keyboardRow4 ))
+        List<List<InlineKeyboardButton>> keyboard = List.of(
+                List.of(btn1, btn2, btn3),
+                List.of(btn4, btn5, btn6),
+                List.of(btn7, btn8, btn9),
+                List.of(btn10, btn11)
+        );
+
+        InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
+                .keyboard(keyboard)
                 .build();
         return ikm;
     }

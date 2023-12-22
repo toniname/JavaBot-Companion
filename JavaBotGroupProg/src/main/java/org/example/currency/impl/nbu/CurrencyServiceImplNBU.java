@@ -12,33 +12,51 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 public class CurrencyServiceImplNBU implements CurrencyService {
+    static String urlNBU = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json";
+    List<CurrencyItemDtoNBU> allCurrencies;
 
-	public double getRate(Currency cc) {
-		String urlNBU = "https://bank.gov.ua/NBUStatService/v1/statdirectory/exchangenew?json";
+    @Override
+    public double getSellRate(Currency ccy) throws IOException {
+        CurrencyItemDtoNBU neededDto = getDtoObject(ccy);
 
-		String jsonStringNBU = "";
+        return neededDto.getRateSell();
+    }
 
-		try {
+    @Override
+    public double getBuyRate(Currency cc) throws IOException {
+        CurrencyItemDtoNBU neededDto = getDtoObject(cc);
+        return neededDto.getRateBuy();
+    }
 
-			jsonStringNBU = Jsoup.connect(urlNBU)
-					.ignoreContentType(true)
-					.get()
-					.body()
-					.text();
+    public double getRate(Currency cc) throws IOException {
+        return getBuyRate(cc);
+    }
 
-		} catch (IOException e) {
-			System.out.println("Error while currency request!!!");
-		}
+    public CurrencyItemDtoNBU getDtoObject(Currency cc) throws IOException {
+        doRequest();
+        CurrencyItemDtoNBU current = allCurrencies.stream()
+                .filter((c) -> c.getCc() == cc)
+                .findFirst()
+                .orElseThrow();
+        System.out.println(current);
 
-		Type typeNBU = TypeToken.getParameterized(List.class, CurrencyItemDtoNBU.class)
-				.getType();
+        return current;
+    }
 
-		List<CurrencyItemDtoNBU> listNBU = new Gson().fromJson(jsonStringNBU, typeNBU);
+    private void doRequest() throws IOException {
 
-		return listNBU.stream()
-				.filter(c -> c.getCc() == cc)
-				.map(CurrencyItemDtoNBU::getRate)
-				.findFirst()
-				.orElseThrow();
-	}
+        String jsonString = Jsoup.connect(urlNBU)
+                .ignoreContentType(true)
+                .get()
+                .body()
+                .text();
+
+        System.out.println(jsonString);
+
+        Type type = TypeToken
+                .getParameterized(List.class, CurrencyItemDtoNBU.class)
+                .getType();
+
+        allCurrencies = new Gson().fromJson(jsonString, type);
+    }
 }

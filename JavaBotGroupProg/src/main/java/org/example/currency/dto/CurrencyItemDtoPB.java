@@ -11,4 +11,6 @@ public class CurrencyItemDtoPB {
     private Currency base_ccy;
     private String buy;
     private String sale;
+    public double rateBuy;
+    public double rateSell;
 }

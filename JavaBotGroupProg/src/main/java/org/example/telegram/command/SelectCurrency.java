@@ -15,7 +15,7 @@ import java.util.List;
 
 public class SelectCurrency extends BotCommand {
     public SelectCurrency() {
-        super("selectCurrency", "select Currency");
+        super("selectCurrency", "Оберіть вілюту");
     }
 
     @Override
@@ -30,13 +30,13 @@ public class SelectCurrency extends BotCommand {
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
                 .text("USD" + selectedOptions.isSelectedCurrency("usd"))
-                .callbackData("usd")
+                .callbackData("selectCurrency usd")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
                 .text("EUR" + selectedOptions.isSelectedCurrency("eur"))
-                .callbackData("eur")
+                .callbackData("selectCurrency eur")
                 .build();
 
 

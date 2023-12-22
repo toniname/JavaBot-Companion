@@ -1,12 +1,10 @@
 package org.example.telegram;
 
 import lombok.Getter;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.example.currency.impl.Currency;
 import org.example.currency.CurrencyRatePrettier;
-import org.example.currency.CurrencyService;
+import org.example.currency.impl.CurrencyService;
 import org.example.currency.sort.CurrencyRatePrettierImpl;
+import org.example.currency.impl.Currency;
 import org.example.currency.impl.mono.CurrencyServiceImplMONO;
 import org.example.currency.impl.nbu.CurrencyServiceImplNBU;
 import org.example.currency.impl.pb.CurrencyServiceImplPB;
@@ -15,25 +13,26 @@ import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
+import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
+import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
-    private CurrencyService currencyService;
+    private final CurrencyService currencyService;
     private final CurrencyRatePrettier currencyRatePrettier;
-    private static final Log log = LogFactory.getLog(CurrencyTelegramBot.class);
-
 
     @Getter
     private static final Map<Long, SelectedOptions> usersOptions = new HashMap<>();
 
-
     public CurrencyTelegramBot() {
-        currencyService = new CurrencyServiceImpl();
+        currencyService = new CurrencyServiceImplMONO(); // Выберите реализацию по умолчанию
         currencyRatePrettier = new CurrencyRatePrettierImpl();
         register(new StartCommand());
         register(new SettingsCommand());
@@ -49,96 +48,91 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     }
 
     @Override
-    public String getBotToken() { return LoginAndToken.TOKEN; }
-
-
+    public String getBotToken() {
+        return LoginAndToken.TOKEN;
+    }
 
     @Override
     public void processNonCommandUpdate(Update update) {
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            handleIncomingMessage(update.getMessage());
+        } else if (update.hasCallbackQuery()) {
+            handleCallbackQuery(update.getCallbackQuery());
+        }
+    }
 
-        if (update.hasMessage()) {
-            String receivedText = update.getMessage().getText();
-            SendMessage sm = new SendMessage();
-            sm.setChatId(update.getMessage().getChatId());
+    private void handleIncomingMessage(Message message) {
+        // Обработка входящего текстового сообщения, если необходимо
+    }
 
-            if (usersOptions.get(update.getMessage().getChatId()).isEnableTimeSelection()) {
-                if (usersOptions.get(update.getMessage().getChatId()).setTime(receivedText))
-                    sm.setText("Time of notifications is set to: " + receivedText);
-                else
-                    sm.setText("Time of notifications is disabled");
+    private void handleCallbackQuery(CallbackQuery callbackQuery) {
+        BotCommand command = null;
+        String callbackData = callbackQuery.getData();
+        long chatId = callbackQuery.getMessage().getChatId();
+
+        if (!usersOptions.containsKey(chatId) || usersOptions.get(chatId) == null) {
+            usersOptions.put(chatId, new SelectedOptions());
+        }
+
+        if (callbackData.contains("setPrecision")) {
+            setPrecision(callbackData, chatId);
+            callbackData = "precision";
+        }
+
+        switch (callbackData) {
+            case "settings" -> command = new SettingsCommand();
+            case "bank" -> command = new SelectBank();
+            case "usd", "eur" -> {
+                setCurrency(callbackData, chatId);
+                command = new SelectCurrency();
             }
-
-            try {
-                execute(sm);
-            } catch (TelegramApiException e) {
-                e.printStackTrace();
-                log.error("something went wrong");
+            case "currency" -> command = new SelectCurrency();
+            case "precision" -> command = new SelectPrecisoin();
+            case "mono", "nbu", "pryvat" -> {
+                setSelectedBank(callbackData, chatId);
+                command = new SelectBank();
+            }
+            case "time" -> {
+                command = new SelectTime();
+                setEnableTimeSelection(chatId, true);
             }
         }
 
-        if (update.hasCallbackQuery()) {
-            BotCommand command = null;
-            usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setEnableTimeSelection(false);
-
-            String callbackData = update.getCallbackQuery().getData();
-
-            if (callbackData.contains("setprecision")) {
-                setPrecision(callbackData, update);
-                callbackData = "precision";
+        try {
+            if (command != null) {
+                command.execute(this, callbackQuery.getFrom(), callbackQuery.getMessage().getChat(), null);
             }
-
-            switch (callbackData) {
-                case "settings" -> command =  new SettingsCommand();
-                case "bank" -> command = new SelectBank();
-                case "usd" , "eur" ->
-                {
-                    setCurrency(callbackData,update);
-                    command = new SelectCurrency();
-                }
-
-                case "currency" -> command = new SelectCurrency();
-                case "precision" -> command = new SelectPrecisoin();
-                case "mono", "nbu", "pryvat" -> {
-                    usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setSelectedBank(callbackData);
-                    command = new SelectBank();
-                }
-                case "time" ->
-                {
-                    command = new SelectTime();
-                    usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setEnableTimeSelection(true);
-                }
-            }
-
-            try {
-                if (command == null) return;
-                if (update.getCallbackQuery() != null && update.getCallbackQuery().getMessage() != null && update.getCallbackQuery().getData() != null) {
-                    command.execute(this,
-                                            update.getCallbackQuery().getMessage().getFrom(),
-                                            update.getCallbackQuery().getMessage().getChat(),
-                                            null
-                                    );
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-                log.error("something went wrong", e);            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Something went wrong");
         }
-
-        usersOptions.forEach((k, v) -> System.out.println(k + "  " +  v));
-
     }
 
-    private void setPrecision(String s, Update update) {
-        usersOptions.get(update.getCallbackQuery().getMessage().getChatId())
-                .setPrecision(s.substring(s.length()-1));
-    }
-    private void setCurrency(String s, Update update) {
-        usersOptions.get(update.getCallbackQuery().getMessage().getChatId())
-                .setCurrency(s);
+    private void setPrecision(String data, long chatId) {
+        SelectedOptions options = usersOptions.get(chatId);
+        if (options != null) {
+            options.setPrecision(data.substring(data.length() - 1));
+        }
     }
 
-    private String getRate(String ccy) {
-        Currency currency = Currency.valueOf(ccy);
-        return currencyRatePrettier.pretty(currencyService.getRate(currency), currency);
+    private void setCurrency(String data, long chatId) {
+        SelectedOptions options = usersOptions.get(chatId);
+        if (options != null) {
+            options.setCurrency(data);
+        }
+    }
+
+    private void setSelectedBank(String data, long chatId) {
+        SelectedOptions options = usersOptions.get(chatId);
+        if (options != null) {
+            options.setSelectedBank(data);
+        }
+    }
+
+    private void setEnableTimeSelection(long chatId, boolean enableTimeSelection) {
+        SelectedOptions options = usersOptions.get(chatId);
+        if (options != null) {
+            options.setEnableTimeSelection(enableTimeSelection);
+        }
     }
 }

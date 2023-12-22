@@ -31,25 +31,25 @@ public class SelectPrecisoin extends BotCommand {
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
                 .text("1" + selectedOptions.isSelectedPrecision("1"))
-                .callbackData("setprecision 1")
+                .callbackData("setPrecision 1")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
                 .text("2" + selectedOptions.isSelectedPrecision("2"))
-                .callbackData("setprecision 2")
+                .callbackData("setPrecision 2")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
                 .text("3" + selectedOptions.isSelectedPrecision("3"))
-                .callbackData("setprecision 3")
+                .callbackData("setPrecision 3")
                 .build();
 
         InlineKeyboardButton btn4 = InlineKeyboardButton
                 .builder()
                 .text("4" + selectedOptions.isSelectedPrecision("4"))
-                .callbackData("setprecision 4")
+                .callbackData("setPrecision 4")
                 .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()

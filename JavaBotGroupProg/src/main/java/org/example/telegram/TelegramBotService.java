@@ -8,7 +8,7 @@ public class TelegramBotService {
 
     CurrencyTelegramBot ctb;
 
-    public TelegramBotService () {
+    public TelegramBotService() {
         ctb = new CurrencyTelegramBot();
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
