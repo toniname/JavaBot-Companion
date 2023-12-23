@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/JavaBot-Companion.iml" filepath="$PROJECT_DIR$/.idea/JavaBot-Companion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/12345.iml" filepath="$PROJECT_DIR$/.idea/12345.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaBotGroupProg/JavaBot-Companion.iml" filepath="$PROJECT_DIR$/JavaBotGroupProg/JavaBot-Companion.iml" />
     </modules>
   </component>
 </project>

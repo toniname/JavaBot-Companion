@@ -10,5 +10,8 @@
         <module name="JavaBot-Companion" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JavaBot-Companion" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
