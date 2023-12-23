@@ -12,6 +12,8 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class SelectBank extends BotCommand {
@@ -19,6 +21,8 @@ public class SelectBank extends BotCommand {
     public SelectBank() {
         super("selectBank", "select specific bank");
     }
+
+    private static final Logger logger = Logger.getLogger(SelectBank.class.getName());
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
@@ -31,20 +35,20 @@ public class SelectBank extends BotCommand {
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Mono" + selectedOptions.isBankSelected("mono"))
-                .callbackData("mono")
+                .text("Mono" + selectedOptions.isBankSelected("MONO"))
+                .callbackData("Mono")
                 .build();
 
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Pryvat" + selectedOptions.isBankSelected("pryvat"))
-                .callbackData("pryvat")
+                .text("Pryvat" + selectedOptions.isBankSelected("PRYVAT"))
+                .callbackData("Pryvat")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
-                .text("NBU" + selectedOptions.isBankSelected("nbu"))
-                .callbackData("nbu")
+                .text("NBU" + selectedOptions.isBankSelected("NBU"))
+                .callbackData("Nbu")
                 .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
@@ -56,7 +60,7 @@ public class SelectBank extends BotCommand {
         try {
             absSender.execute(sm);
         } catch (TelegramApiException e) {
-            System.out.println("Error");
+            logger.log(Level.SEVERE, "Telegram API error", e);
         }
     }
 }

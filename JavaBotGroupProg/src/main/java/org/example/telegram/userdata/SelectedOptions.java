@@ -1,19 +1,23 @@
 package org.example.telegram.userdata;
 
 import lombok.Getter;
-import org.glassfish.grizzly.utils.EchoFilter;
+import lombok.Setter;
+import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.example.telegram.CurrencyTelegramBot.usersOptions;
+
 public class SelectedOptions {
 
-    private  Map<String, String> banks = new HashMap<>();
-    private  String precision = "2";
-    private  String currency = "usd";
+    private final Map<String, String> banks = new HashMap<>();
+    private String precision = "2";
+    private String currency = "USD";
 
     private String time = null;
 
+    @Setter
     @Getter
     private boolean enableTimeSelection = false;
 
@@ -21,18 +25,13 @@ public class SelectedOptions {
         setDefault();
     }
 
-
-    public void setEnableTimeSelection(boolean enableTimeSelection) {
-        this.enableTimeSelection = enableTimeSelection;
+    public void setDefault() {
+        banks.put("MONO", "✅");
+        banks.put("PRYVAT", "");
+        banks.put("NBU", "");
     }
 
-    public  void setDefault() {
-        banks.put("mono", "✅");
-        banks.put("pryvat", "");
-        banks.put("nbu", "");
-    }
-
-    public  void setSelectedBank(String key) {
+    public void setSelectedBank(String key) {
         banks.replaceAll((k, v) -> "");
         banks.replace(key, "✅");
     }
@@ -47,7 +46,7 @@ public class SelectedOptions {
             return false;
         }
 
-        if (intTime >= 9 && intTime <= 18 ) {
+        if (intTime >= 9 && intTime <= 18) {
             this.time = timeToSet;
             return true;
         } else {
@@ -56,27 +55,42 @@ public class SelectedOptions {
         }
     }
 
-    public  String isBankSelected(String key) {
+    public String isBankSelected(String key) {
         return banks.get(key);
     }
 
-    public  String isSelectedPrecision(String key) {
+    public String isSelectedPrecision(String key) {
         if (precision.equals(key))
             return "✅";
         return "";
     }
 
-
-    public void setPrecision(String precision) {
+    public void setPrecision(String precision, Update update) {
         this.precision = precision;
+
+        // Получите chatId из объекта Update
+        Long chatId = update.getMessage().getChatId();
+        usersOptions.get(chatId).setPrecision("newPrecision", update);
     }
 
-    public  String isSelectedCurrency(String key) {
+    public String isSelectedCurrency(String key) {
         if (currency.equals(key))
             return "✅";
         return "";
     }
 
+    public String getSelectedBank() {
+        for (Map.Entry<String, String> entry : banks.entrySet()) {
+            if ("✅".equals(entry.getValue())) {
+                return entry.getKey();
+            }
+        }
+        return null;
+    }
+
+    public String getSelectedCurrency() {
+        return currency;
+    }
 
     public void setCurrency(String currency) {
         this.currency = currency;

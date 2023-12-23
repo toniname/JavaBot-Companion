@@ -27,21 +27,21 @@ public class SelectCurrency extends BotCommand {
         sm.setChatId(chat.getId());
         SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
-        InlineKeyboardButton btn1 = InlineKeyboardButton
+        InlineKeyboardButton btnUSD = InlineKeyboardButton
                 .builder()
-                .text("USD" + selectedOptions.isSelectedCurrency("usd"))
-                .callbackData("usd")
+                .text("USD" + selectedOptions.isSelectedCurrency("USD"))
+                .callbackData("currency usd")
                 .build();
 
-        InlineKeyboardButton btn2 = InlineKeyboardButton
+        InlineKeyboardButton btnEUR = InlineKeyboardButton
                 .builder()
-                .text("EUR" + selectedOptions.isSelectedCurrency("eur"))
-                .callbackData("eur")
+                .text("EUR" + selectedOptions.isSelectedCurrency("EUR"))
+                .callbackData("currency eur")
                 .build();
 
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2)))
+                .keyboard(List.of(List.of(btnUSD, btnEUR)))
                 .build();
 
         sm.setReplyMarkup(ikm);
