@@ -66,6 +66,17 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         // Обработка входящего текстового сообщения, если необходимо
     }
 
+/*    @Override
+    public void onUpdatesReceived(List<Update> updates) {
+
+        for (Update update : updates) {
+            Long chatId = update.getMessage().getChatId();
+            if (update.hasMessage() && update.getMessage().getText().equals("/start")) {
+                 sendImage("patron", chatId);
+            }
+        }
+    }*/
+
     private void handleCallbackQuery(CallbackQuery callbackQuery) {
         BotCommand command = null;
         String callbackData = callbackQuery.getData();

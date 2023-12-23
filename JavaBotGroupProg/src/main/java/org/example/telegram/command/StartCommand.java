@@ -53,7 +53,7 @@ public class StartCommand extends BotCommand {
 
         SendPhoto sendPhoto = new SendPhoto();
         sendPhoto.setChatId(chat.getId().toString());
-        sendPhoto.setPhoto(new InputFile(new File("JavaBotGroupProg/patron.png")));
+        sendPhoto.setPhoto(new InputFile(new File("JavaBotGroupProg/images/patron.png")));
         try {
             absSender.execute(sendPhoto);
             absSender.execute(sm);
