@@ -31,6 +31,45 @@ public class SelectBank extends BotCommand {
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
+
+        // Отримуємо вибір користувача з попередньої опції
+        String selectedBank = strings != null && strings.length > 0 ? strings[0] : null;
+
+        InlineKeyboardMarkup ikm = createBankButtons(selectedBank);
+        sm.setReplyMarkup(ikm);
+
+        try {
+            absSender.execute(sm);
+        } catch (TelegramApiException e) {
+            // Логуємо деталі помилки
+            logger.log(Level.SEVERE, "Telegram API error", e);
+        }
+    }
+
+    private InlineKeyboardMarkup createBankButtons(String selectedBank) {
+        List<List<InlineKeyboardButton>> buttons = List.of(
+                createButton("Mono", "mono", selectedBank),
+                createButton("Pryvat", "pryvat", selectedBank),
+                createButton("NBU", "nbu", selectedBank)
+        );
+
+        return InlineKeyboardMarkup.builder().keyboard(buttons).build();
+    }
+
+    private List<InlineKeyboardButton> createButton(String bankName, String callbackData, String selectedBank) {
+        String buttonText = bankName + (selectedBank != null && selectedBank.equals(callbackData) ? " (Selected)" : "");
+        return List.of(InlineKeyboardButton.builder().text(buttonText).callbackData(callbackData).build());
+    }
+}
+
+
+
+
+
+
+       /* SendMessage sm = new SendMessage();
+        sm.setText(text);
+        sm.setChatId(chat.getId());
         SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
@@ -63,4 +102,4 @@ public class SelectBank extends BotCommand {
             logger.log(Level.SEVERE, "Telegram API error", e);
         }
     }
-}
+}*/
