@@ -5,6 +5,7 @@ import org.example.currency.impl.Currency;
 import org.example.currency.impl.CurrencyServicesFacade;
 import org.example.currency.sort.CurrencyRatePrettierImpl;
 import org.example.telegram.command.*;
+import org.example.telegram.userdata.LoginAndToken2;
 import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
@@ -37,12 +38,12 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotUsername() {
-        return LoginAndToken.NAME;
+        return LoginAndToken2.NAME;
     }
 
     @Override
     public String getBotToken() {
-        return LoginAndToken.TOKEN;
+        return LoginAndToken2.TOKEN;
     }
 
     public static synchronized Map<Long, SelectedOptions> getUsersOptions() {
@@ -52,16 +53,13 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     @Override
     public void processNonCommandUpdate(Update update) {
         if (update.hasMessage())
-            // Логіка обробки повідомлення
             processMessageUpdates(update);
 
         if (update.hasCallbackQuery()) {
-            // Логіка обробки callback
             BotCommand command = processUpdatesWIthCallback(update);
 
             try {
                 if (command != null) {
-                    // Якщо команда не null, виконуємо її
                     usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).push(command);
                     command.execute(this,
                             update.getCallbackQuery().getMessage().getFrom(),
