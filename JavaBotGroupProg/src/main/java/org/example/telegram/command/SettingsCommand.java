@@ -9,8 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.List;
 
 public class SettingsCommand extends BotCommand {
 
@@ -50,8 +49,15 @@ public class SettingsCommand extends BotCommand {
                 .build();
 
 
+        InlineKeyboardButton btn5 = InlineKeyboardButton
+                .builder()
+                .text("Back")
+                .callbackData("back")
+                .build();
+
+
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(Collections.singletonList(Arrays.asList(btn1, btn2, btn3, btn4)))
+                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(btn5)))
                 .build();
 
         sm.setReplyMarkup(ikm);

@@ -46,7 +46,13 @@ public class StartCommand extends BotCommand {
 
         sm.setReplyMarkup(ikm);
 
-        CurrencyTelegramBot.getUsersOptions().put(chat.getId(), new SelectedOptions());
+
+        if (!CurrencyTelegramBot.getUsersOptions().containsKey(chat.getId())) {
+            SelectedOptions newEntity = new SelectedOptions();
+            newEntity.push(this);
+            CurrencyTelegramBot.getUsersOptions().put(chat.getId(), newEntity);
+        }
+
 
         try {
             absSender.execute(sm);
