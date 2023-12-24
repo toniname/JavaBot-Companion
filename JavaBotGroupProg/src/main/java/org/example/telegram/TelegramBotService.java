@@ -6,10 +6,8 @@ import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
 
 public class TelegramBotService {
 
-    private final CurrencyTelegramBot ctb;
-
     public TelegramBotService() {
-        ctb = new CurrencyTelegramBot();
+        CurrencyTelegramBot ctb = new CurrencyTelegramBot();
         try {
             TelegramBotsApi telegramBotsApi = new TelegramBotsApi(DefaultBotSession.class);
             telegramBotsApi.registerBot(ctb);

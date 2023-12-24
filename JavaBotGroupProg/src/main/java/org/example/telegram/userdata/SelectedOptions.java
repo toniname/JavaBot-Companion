@@ -20,6 +20,8 @@ public class SelectedOptions {
     private String precision = "2";
     private String currency = "usd";
 
+
+
     private String time = null;
 
     @Setter
@@ -59,7 +61,7 @@ public class SelectedOptions {
         banks.replace(key, "✅");
     }
 
-    public boolean setTime(String timeToSet) {
+    public synchronized boolean setTime(String timeToSet) {
         int intTime;
 
         try {
@@ -76,6 +78,11 @@ public class SelectedOptions {
             this.time = null;
             return false;
         }
+    }
+
+    public synchronized int getTime() {
+        if (time == null) return -1;
+        return Integer.parseInt(time);
     }
 
     public String isBankSelected(String key) {
