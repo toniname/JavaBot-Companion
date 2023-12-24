@@ -1,7 +1,16 @@
 package org.example.currecy.impl;
 
+import lombok.Getter;
+
+@Getter
 public enum Currency {
-    USD,
-    EUR,
-    UAH
+    UAH(980),
+    EUR(978),
+    USD(840);
+
+    private final int ISOCode;
+
+    Currency(int ISOCode) {
+        this.ISOCode = ISOCode;
+    }
 }
