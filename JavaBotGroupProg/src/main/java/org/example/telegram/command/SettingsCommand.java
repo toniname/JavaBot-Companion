@@ -49,15 +49,11 @@ public class SettingsCommand extends BotCommand {
                 .build();
 
 
-        InlineKeyboardButton btn5 = InlineKeyboardButton
-                .builder()
-                .text("\uD83D\uDD19Back")
-                .callbackData("back")
-                .build();
+        InlineKeyboardButton backButton = BackButton.createBackButton();
 
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(btn5)))
+                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(backButton)))
                 .build();
 
         sm.setReplyMarkup(ikm);

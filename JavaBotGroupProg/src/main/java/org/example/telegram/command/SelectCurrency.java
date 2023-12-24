@@ -10,6 +10,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import org.example.telegram.command.BackButton;
 
 import java.util.List;
 
@@ -39,14 +40,10 @@ public class SelectCurrency extends BotCommand {
                 .callbackData("eur")
                 .build();
 
-        InlineKeyboardButton btn5 = InlineKeyboardButton
-                .builder()
-                .text("\uD83D\uDD19Back")
-                .callbackData("back")
-                .build();
+        InlineKeyboardButton backButton = BackButton.createBackButton();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btnUSD, btnEUR, btn5)))
+                .keyboard(List.of(List.of(btnUSD, btnEUR, backButton)))
                 .build();
 
         sm.setReplyMarkup(ikm);
