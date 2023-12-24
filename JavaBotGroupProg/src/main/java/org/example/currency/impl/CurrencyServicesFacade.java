@@ -1,5 +1,7 @@
 package org.example.currency.impl;
 
+
+
 import org.example.currency.impl.mono.CurrencyServiceImplMONO;
 import org.example.currency.impl.nbu.CurrencyServiceImplNBU;
 import org.example.currency.impl.pb.CurrencyServiceImplPB;
@@ -15,7 +17,7 @@ public class CurrencyServicesFacade {
         switch (bank) {
             case NBU -> currencyService = new CurrencyServiceImplNBU();
             case MONO -> currencyService = new CurrencyServiceImplMONO();
-            case PRYVAT -> currencyService =  new CurrencyServiceImplPB();
+            case PRIVATE -> currencyService =  new CurrencyServiceImplPB();
         }
     }
 

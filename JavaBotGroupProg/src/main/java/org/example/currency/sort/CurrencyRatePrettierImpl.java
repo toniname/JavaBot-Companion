@@ -3,7 +3,6 @@ package org.example.currency.sort;
 
 import org.example.currency.CurrencyRatePrettier;
 import org.example.currency.impl.Currency;
-
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 

@@ -1,7 +1,7 @@
 package org.example.currency.impl;
 
 public enum Banks {
-    NBU, MONO, PRYVAT;
+    NBU, MONO, PRIVATE;
 
     public static Banks fromString(String bankString) {
         for (Banks bank : Banks.values()) {

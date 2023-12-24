@@ -26,7 +26,7 @@ public class StartCommand extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select currency you want to check";
+        String text = "\uD83D\uDCB2 Виберіть валюту яку хочете перевірити \uD83D\uDCB2";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
@@ -34,12 +34,12 @@ public class StartCommand extends BotCommand {
 
         InlineKeyboardButton settingsButton = InlineKeyboardButton
                 .builder()
-                .text("Settings")
+                .text("Налаштування")
                 .callbackData("settings")
                 .build();
         InlineKeyboardButton infoButton = InlineKeyboardButton
                 .builder()
-                .text("Get info")
+                .text("Отримати інформацію")
                 .callbackData("info")
                 .build();
 

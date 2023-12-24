@@ -19,7 +19,7 @@ public class SettingsCommand extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select option";
+        String text = "⚙ Вибір опції ⚙";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
@@ -27,24 +27,24 @@ public class SettingsCommand extends BotCommand {
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Bank")
+                .text("Банк")
                 .callbackData("bank")
                 .build();
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Currency")
+                .text("Валюта")
                 .callbackData("currency")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
-                .text("Time")
+                .text("Час")
                 .callbackData("time")
                 .build();
 
         InlineKeyboardButton btn4 = InlineKeyboardButton
                 .builder()
-                .text("Precision")
+                .text("Число знаків після коми")
                 .callbackData("precision")
                 .build();
 

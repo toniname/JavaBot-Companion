@@ -21,7 +21,7 @@ public class SelectPrecisoin extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select number of digits after floating point";
+        String text = "Виберіть число знаків після коми";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);

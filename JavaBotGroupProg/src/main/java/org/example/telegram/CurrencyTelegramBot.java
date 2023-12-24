@@ -86,9 +86,9 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
         if (usersOptions.get(update.getMessage().getChatId()).isEnableTimeSelection()) {
             if (usersOptions.get(update.getMessage().getChatId()).setTime(receivedText))
-                sm.setText("Time of notifications is set to: " + receivedText);
+                sm.setText("Вибраний час: " + receivedText);
             else
-                sm.setText("Time of notifications is disabled");
+                sm.setText("Вибраний час скасовано");
         }
 
         try {
@@ -115,7 +115,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             case "currency" -> command = new SelectCurrency();
             case "precision" -> command = new SelectPrecisoin();
             case "back" -> command = usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).pop();
-            case "mono", "nbu", "pryvat" -> {
+            case "mono", "nbu", "private" -> {
                 usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setSelectedBank(callbackData);
                 command = new SelectBank();
             }
@@ -145,7 +145,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         double rate;
         try {
             rate = currencyServicesFacade.getRate(selectedCurrency, selectedBank);
-            msg = selectedBank + ":" + selectedCurrency + " rate is : " +
+            msg = "Обраний банк " + selectedBank.name() + ", обрана валюта: " + selectedCurrency + ", курс : " +
                     prettier.roundNum(rate, Integer.parseInt(selectedOptions.getPrecision()));
         } catch (IOException e) {
             msg = "Something went wrong";

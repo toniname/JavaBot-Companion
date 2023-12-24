@@ -52,7 +52,7 @@ public class SelectedOptions {
 
     public void setDefault() {
         banks.put("mono", "✅");
-        banks.put("pryvat", "");
+        banks.put("private", "");
         banks.put("nbu", "");
     }
 
