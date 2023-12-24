@@ -29,19 +29,24 @@ public class SelectCurrency extends BotCommand {
 
         InlineKeyboardButton btnUSD = InlineKeyboardButton
                 .builder()
-                .text("USD" + selectedOptions.isSelectedCurrency("USD"))
-                .callbackData("currency usd")
+                .text("USD" + selectedOptions.isSelectedCurrency("usd"))
+                .callbackData("usd")
                 .build();
 
         InlineKeyboardButton btnEUR = InlineKeyboardButton
                 .builder()
-                .text("EUR" + selectedOptions.isSelectedCurrency("EUR"))
-                .callbackData("currency eur")
+                .text("EUR" + selectedOptions.isSelectedCurrency("eur"))
+                .callbackData("eur")
                 .build();
 
+        InlineKeyboardButton btn5 = InlineKeyboardButton
+                .builder()
+                .text("Back")
+                .callbackData("back")
+                .build();
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btnUSD, btnEUR)))
+                .keyboard(List.of(List.of(btnUSD, btnEUR, btn5)))
                 .build();
 
         sm.setReplyMarkup(ikm);

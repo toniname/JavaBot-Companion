@@ -34,8 +34,11 @@ public class SelectBank extends BotCommand {
 
         // Отримуємо вибір користувача з попередньої опції
         String selectedBank = strings != null && strings.length > 0 ? strings[0] : null;
+        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
-        InlineKeyboardMarkup ikm = createBankButtons(selectedBank);
+
+
+        InlineKeyboardMarkup ikm = createBankButtons(selectedOptions);
         sm.setReplyMarkup(ikm);
 
         try {
@@ -46,18 +49,20 @@ public class SelectBank extends BotCommand {
         }
     }
 
-    private InlineKeyboardMarkup createBankButtons(String selectedBank) {
+    private InlineKeyboardMarkup createBankButtons(SelectedOptions selectedOptions) {
         List<List<InlineKeyboardButton>> buttons = List.of(
-                createButton("Mono", "mono", selectedBank),
-                createButton("Pryvat", "pryvat", selectedBank),
-                createButton("NBU", "nbu", selectedBank)
+                createButton("Mono", "mono", selectedOptions.getSelectedBank()),
+                createButton("Pryvat", "pryvat", selectedOptions.getSelectedBank()),
+                createButton("NBU", "nbu", selectedOptions.getSelectedBank()),
+                createButton("Back", "back", "")
+
         );
 
         return InlineKeyboardMarkup.builder().keyboard(buttons).build();
     }
 
     private List<InlineKeyboardButton> createButton(String bankName, String callbackData, String selectedBank) {
-        String buttonText = bankName + (selectedBank != null && selectedBank.equals(callbackData) ? " (Selected)" : "");
+        String buttonText = bankName + (selectedBank.equalsIgnoreCase(bankName) ?  "✅" : "");  // selectedBank;//(selectedBank != null && selectedBank.equals(callbackData) ? " (Selected)" : "");
         return List.of(InlineKeyboardButton.builder().text(buttonText).callbackData(callbackData).build());
     }
 }

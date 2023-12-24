@@ -3,10 +3,10 @@ package org.example.telegram;
 import lombok.Getter;
 import org.example.currency.impl.Banks;
 import org.example.currency.impl.Currency;
+import org.example.currency.impl.CurrencyServicesFacade;
 import org.example.currency.impl.mono.CurrencyServiceImplMONO;
 import org.example.currency.impl.nbu.CurrencyServiceImplNBU;
 import org.example.currency.impl.pb.CurrencyServiceImplPB;
-import org.example.currency.CurrencyRatePrettier;
 import org.example.currency.impl.CurrencyService;
 import org.example.currency.sort.CurrencyRatePrettierImpl;
 import org.example.telegram.command.*;
@@ -17,7 +17,6 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,17 +27,11 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     public static final Map<Long, SelectedOptions> usersOptions = new HashMap<>();
 
 
+    private static final CurrencyServicesFacade currencyServicesFacade = new CurrencyServicesFacade();
+    private static final CurrencyRatePrettierImpl prettier = new CurrencyRatePrettierImpl();
+
     public CurrencyTelegramBot() {
-        Banks defaultBank = Banks.PRYVAT;
-        CurrencyService currencyService;
-        switch (defaultBank) {
-            case NBU -> currencyService = new CurrencyServiceImplNBU();
-            case MONO -> currencyService = new CurrencyServiceImplMONO();
-            case PRYVAT -> currencyService = new CurrencyServiceImplPB();
-        }
 
-
-        CurrencyRatePrettier currencyRatePrettier = new CurrencyRatePrettierImpl();
         register(new StartCommand());
         register(new SettingsCommand());
         register(new SelectBank());
@@ -82,7 +75,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             }
         }
 
-
         if (update.hasCallbackQuery()) {
             // Логіка обробки callback
 
@@ -92,16 +84,19 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             String callbackData = update.getCallbackQuery().getData();
 
             if (callbackData.contains("setprecision")) {
-                usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setPrecision(callbackData, update);
+                usersOptions.get(update.getCallbackQuery().getMessage().getChatId())
+                        .setPrecision(callbackData.substring(callbackData.length()-1));
+
                 callbackData = "precision";
             }
 
             switch (callbackData) {
                 case "settings" -> command = new SettingsCommand();
                 case "bank" -> command = new SelectBank();
-                case "usd", "eur" -> {
-                    setCurrency(callbackData, update);
-                    command = new SelectCurrency();
+                case "back" -> {
+                    System.out.println(usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).getHistory());
+
+                    command = usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).pop();
                 }
                 case "currency" -> command = new SelectCurrency();
                 case "precision" -> command = new SelectPrecisoin();
@@ -113,44 +108,62 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                     command = new SelectTime();
                     usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setEnableTimeSelection(true);
                 }
+                case "usd", "eur" -> {
+                    setCurrency(callbackData, update);
+                    command = new SelectCurrency();
+                }
             }
 
             try {
                 if (command != null) {
                     // Якщо команда не null, виконуємо її
+                    usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).push(command);
                     command.execute(this,
                             update.getCallbackQuery().getMessage().getFrom(),
                             update.getCallbackQuery().getMessage().getChat(),
                             null
                     );
-                } else {
+                } else if (callbackData.equalsIgnoreCase("info")) {
                     // В іншому випадку отримуємо курс валюти
                     CurrencyService currencyService = getCurrencyServiceForSelectedBank(update.getCallbackQuery().getMessage().getChatId());
-                    String selectedCurrencyValue = usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).getSelectedCurrency();
+                    SelectedOptions selectedOptions = usersOptions.get(update.getCallbackQuery().getMessage().getChatId());
 
-                    if (selectedCurrencyValue != null) {
-                        Currency selectedCurrency = Currency.valueOf(selectedCurrencyValue);
-                        double rate;
-                        try {
-                            assert currencyService != null;
-                            rate = currencyService.getRate(selectedCurrency);
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
+                    Currency selectedCurrency = Currency.valueOf(selectedOptions.getSelectedCurrency().toUpperCase());
+                    Banks selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
+                    double rate = currencyServicesFacade.getRate(selectedCurrency, selectedBank);
 
-                        // Виводимо курс валюти або використовуємо rate за необхідності
-                        SendMessage sm = new SendMessage();
-                        sm.setChatId(update.getCallbackQuery().getMessage().getChatId());
-                        sm.setText("Exchange rate for " + selectedCurrency + ": " + rate);
+                    String msg = selectedBank + ":" + selectedCurrency + "rate is : " +
+                            prettier.roundNum(rate, Integer.parseInt(selectedOptions.getPrecision()));
 
-                        execute(sm);
-                    } else {
-                        // Обработка ситуации, когда значение не установлено
-                        SendMessage sm = new SendMessage();
-                        sm.setChatId(update.getCallbackQuery().getMessage().getChatId());
-                        sm.setText("Selected currency is not set");
-                        execute(sm);
-                    }
+                    SendMessage sm = new SendMessage();
+                    sm.setChatId(update.getCallbackQuery().getMessage().getChatId());
+                    sm.setText(msg);
+                    execute(sm);
+
+
+//                    if (selectedCurrencyValue != null) {
+//                        Currency selectedCurrency = Currency.valueOf(selectedCurrencyValue);
+//                        double rate;
+//                        try {
+//                            assert currencyService != null;
+//                            rate = currencyService.getRate(selectedCurrency);
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//
+//                        // Виводимо курс валюти або використовуємо rate за необхідності
+//                        SendMessage sm = new SendMessage();
+//                        sm.setChatId(update.getCallbackQuery().getMessage().getChatId());
+//                        sm.setText("Exchange rate for " + selectedCurrency + ": " + rate);
+//
+//                        execute(sm);
+//                    } else {
+//                        // Обработка ситуации, когда значение не установлено
+//                        SendMessage sm = new SendMessage();
+//                        sm.setChatId(update.getCallbackQuery().getMessage().getChatId());
+//                        sm.setText("Selected currency is not set");
+//                        execute(sm);
+//                    }
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -176,7 +189,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                     case NBU -> new CurrencyServiceImplNBU();
                     case MONO -> new CurrencyServiceImplMONO();
                     case PRYVAT -> new CurrencyServiceImplPB();
-                    default -> throw new IllegalArgumentException("Invalid bank selected");
                 };
             } catch (IllegalArgumentException e) {
                 throw new RuntimeException(e);
@@ -186,7 +198,8 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     }
 
     private void setCurrency(String callbackData, Update update) {
-        usersOptions.get(update.getMessage().getChatId()).setCurrency(callbackData);
+        usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setCurrency(callbackData);
     }
+
 
 }

@@ -17,4 +17,9 @@ public class CurrencyRatePrettierImpl implements CurrencyRatePrettier {
         return String.format(FORMAT, ccy, df.format(buyRate), df.format(saleRate));
     }
 
+    public String roundNum(double value, int precision) {
+        String format = "%." + precision + "f";
+        return String.format(format, value);
+
+    }
 }
