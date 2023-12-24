@@ -7,7 +7,6 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.bots.AbsSender;
@@ -24,12 +23,12 @@ public class SelectTime extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Select Time";
+        String text = "Виберіть час";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
-        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat);
+        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
 
         sm.setReplyMarkup(createKeyboardMarkup());
@@ -66,3 +65,4 @@ public class SelectTime extends BotCommand {
         return ReplyKeyboardMarkup.builder().keyboard(rows).build();
     }
 }
+

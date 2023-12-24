@@ -3,7 +3,6 @@ package org.example.currency.sort;
 
 import org.example.currency.CurrencyRatePrettier;
 import org.example.currency.impl.Currency;
-
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
@@ -17,4 +16,9 @@ public class CurrencyRatePrettierImpl implements CurrencyRatePrettier {
         return String.format(FORMAT, ccy, df.format(buyRate), df.format(saleRate));
     }
 
+    public String roundNum(double value, int precision) {
+        String format = "%." + precision + "f";
+        return String.format(format, value);
+
+    }
 }
