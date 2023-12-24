@@ -19,7 +19,7 @@ public class SettingsCommand extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Вибір опції";
+        String text = "⚙ Вибір опції ⚙";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);

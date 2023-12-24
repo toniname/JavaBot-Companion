@@ -26,7 +26,7 @@ public class SelectBank extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Виберіть банк";
+        String text = "\uD83C\uDFE6 Виберіть банк \uD83C\uDFE6";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
@@ -53,7 +53,7 @@ public class SelectBank extends BotCommand {
                 createButton("Mонобанк", "mono", selectedOptions.getSelectedBank()),
                 createButton("Приватбанк", "private", selectedOptions.getSelectedBank()),
                 createButton("НБУ", "nbu", selectedOptions.getSelectedBank()),
-                createButton("Повернутись", "back", "")
+                createButton("\uD83D\uDD19", "back", "")
 
         );
 

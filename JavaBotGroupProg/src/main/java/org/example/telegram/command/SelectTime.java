@@ -23,7 +23,7 @@ public class SelectTime extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Виберіть час";
+        String text = "\uD83D\uDD50 Виберіть час \uD83D\uDD50";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);

@@ -20,7 +20,7 @@ public class SelectCurrency extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Виберіть валюту";
+        String text = "\uD83D\uDCB1 Виберіть валюту \uD83D\uDCB1";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
