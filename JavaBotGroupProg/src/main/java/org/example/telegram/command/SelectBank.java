@@ -63,7 +63,6 @@ public class SelectBank extends BotCommand {
     private List<InlineKeyboardButton> createButton(String bankName, String callbackData, String selectedBank) {
 
         String buttonText = bankName + (selectedBank.equalsIgnoreCase(callbackData) ?  "✅" : "");
-        //String buttonText = bankName + (selectedBank.equalsIgnoreCase(bankName) ?  "✅" : "");
         return List.of(InlineKeyboardButton.builder().text(buttonText).callbackData(callbackData).build());
     }
 }
