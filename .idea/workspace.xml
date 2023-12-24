@@ -5,69 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/JavaBot-Companion.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/JavaBot3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/chatbot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/AppLauncher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/CurrencyRatePrettier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoMONO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoNBU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoPB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Banks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyServicesFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/mono/CurrencyServiceImplMONO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/nbu/CurrencyServiceImplNBU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/pb/CurrencyServiceImplPB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/sort/CurrencyRatePrettierImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/images/patron.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/TelegramBotService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecisoin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/CurrencyRatePrettier.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoMONO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU$CurrencyItemDtoNBUBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoPB.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/Banks.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/Currency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/mono/CurrencyServiceImplMONO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/nbu/CurrencyServiceImplNBU.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/impl/pb/CurrencyServiceImplPB.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/sort/CurrencyRatePrettierImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/LoginAndToken.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/TelegramBotService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/Currensy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/userdata/SelectedOptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Currency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currecy/impl/Currency.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currecy/impl/CurrencyService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/Currency.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/CurrencyRatePrettier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/CurrencyService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/dto/CurrencyItemDtoMONO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/dto/CurrencyItemDtoNBU.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/dto/CurrencyItemDtoPB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/Banks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyServicesFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/mono/CurrencyServiceImplMONO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/nbu/CurrencyServiceImplNBU.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/impl/pb/CurrencyServiceImplPB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currecy/sort/CurrencyRatePrettierImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken2.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +98,7 @@
     "Notification.DoNotAsk-Vcs Important Messages": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Toni/IdeaProjects/JavaBot-Companion/.idea/vcs.xml",
     "node.js.detected.package.eslint": "true",
@@ -520,7 +471,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703442284899</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703446559053</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1703446559053</updated>
+    </task>
+    <task id="LOCAL-00040" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703446718281</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1703446718281</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,6 +518,8 @@
     <MESSAGE value="init commit5" />
     <MESSAGE value="add " />
     <MESSAGE value="change Maine to App" />
+    <MESSAGE value="Resolve merge conflict in .idea/vcs.xml" />
+    <MESSAGE value="init commit2" />
     <MESSAGE value="init commit" />
     <option name="LAST_COMMIT_MESSAGE" value="init commit" />
   </component>
