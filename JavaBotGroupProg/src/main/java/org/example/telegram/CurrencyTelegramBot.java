@@ -5,7 +5,6 @@ import org.example.currency.impl.Currency;
 import org.example.currency.impl.CurrencyServicesFacade;
 import org.example.currency.sort.CurrencyRatePrettierImpl;
 import org.example.telegram.command.*;
-import org.example.telegram.userdata.LoginAndToken2;
 import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
@@ -20,7 +19,7 @@ import java.util.Map;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
-    public static final Map<Long, SelectedOptions> usersOptions = new HashMap<>();
+    public static final Map<Long, SelectedOptions>  usersOptions = new HashMap<>();
 
     private static final CurrencyServicesFacade currencyServicesFacade = new CurrencyServicesFacade();
     private static final CurrencyRatePrettierImpl prettier = new CurrencyRatePrettierImpl();
@@ -82,11 +81,17 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         SendMessage sm = new SendMessage();
         sm.setChatId(update.getMessage().getChatId());
 
-        if (usersOptions.get(update.getMessage().getChatId()).isEnableTimeSelection()) {
-            if (usersOptions.get(update.getMessage().getChatId()).setTime(receivedText))
+        Long chatId = update.getMessage().getChatId();
+        SelectedOptions options = usersOptions.getOrDefault(chatId, new SelectedOptions());
+
+        if (options.isEnableTimeSelection()) {
+            if (options.setTime(receivedText)) {
                 sm.setText("Вибраний час: " + receivedText);
-            else
+            } else {
                 sm.setText("Вибраний час скасовано");
+            }
+        } else {
+            sm.setText("Час не активовано для цього користувача");
         }
 
         try {
