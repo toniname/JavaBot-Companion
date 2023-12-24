@@ -1,0 +1,33 @@
+Index: JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.telegram.command;\r\n\r\nimport org.example.telegram.CurrencyTelegramBot;\r\nimport org.example.telegram.userdata.SelectedOptions;\r\nimport org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;\r\nimport org.telegram.telegrambots.meta.api.methods.send.SendMessage;\r\nimport org.telegram.telegrambots.meta.api.objects.Chat;\r\nimport org.telegram.telegrambots.meta.api.objects.User;\r\nimport org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;\r\nimport org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;\r\nimport org.telegram.telegrambots.meta.bots.AbsSender;\r\nimport org.telegram.telegrambots.meta.exceptions.TelegramApiException;\r\n\r\nimport java.util.List;\r\nimport java.util.logging.Level;\r\nimport java.util.logging.Logger;\r\n\r\n\r\npublic class SelectBank extends BotCommand {\r\n\r\n    public SelectBank() {\r\n        super(\"selectBank\", \"select specific bank\");\r\n    }\r\n\r\n    private static final Logger logger = Logger.getLogger(SelectBank.class.getName());\r\n\r\n    @Override\r\n    public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {\r\n        String text = \"Select bank\";\r\n\r\n        SendMessage sm = new SendMessage();\r\n        sm.setText(text);\r\n        sm.setChatId(chat.getId());\r\n        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());\r\n\r\n        InlineKeyboardButton btn1 = InlineKeyboardButton\r\n                .builder()\r\n                .text(\"Mono\" + selectedOptions.isBankSelected(\"MONO\"))\r\n                .callbackData(\"MONO\")\r\n                .build();\r\n\r\n        InlineKeyboardButton btn2 = InlineKeyboardButton\r\n                .builder()\r\n                .text(\"Pryvat\" + selectedOptions.isBankSelected(\"PRYVAT\"))\r\n                .callbackData(\"PRYVAT\")\r\n                .build();\r\n\r\n        InlineKeyboardButton btn3 = InlineKeyboardButton\r\n                .builder()\r\n                .text(\"NBU\" + selectedOptions.isBankSelected(\"NBU\"))\r\n                .callbackData(\"NBU\")\r\n                .build();\r\n\r\n        InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()\r\n                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3)))\r\n                .build();\r\n\r\n        sm.setReplyMarkup(ikm);\r\n\r\n        try {\r\n            absSender.execute(sm);\r\n        } catch (TelegramApiException e) {\r\n            logger.log(Level.SEVERE, \"Telegram API error\", e);\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java b/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java
+--- a/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java	(revision de5aef3a75750e2837b59247b7654ad0bc1a908d)
++++ b/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java	(date 1703346057021)
+@@ -36,19 +36,19 @@
+         InlineKeyboardButton btn1 = InlineKeyboardButton
+                 .builder()
+                 .text("Mono" + selectedOptions.isBankSelected("MONO"))
+-                .callbackData("MONO")
++                .callbackData("Mono")
+                 .build();
+ 
+         InlineKeyboardButton btn2 = InlineKeyboardButton
+                 .builder()
+                 .text("Pryvat" + selectedOptions.isBankSelected("PRYVAT"))
+-                .callbackData("PRYVAT")
++                .callbackData("Pryvat")
+                 .build();
+ 
+         InlineKeyboardButton btn3 = InlineKeyboardButton
+                 .builder()
+                 .text("NBU" + selectedOptions.isBankSelected("NBU"))
+-                .callbackData("NBU")
++                .callbackData("Nbu")
+                 .build();
+ 
+         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()

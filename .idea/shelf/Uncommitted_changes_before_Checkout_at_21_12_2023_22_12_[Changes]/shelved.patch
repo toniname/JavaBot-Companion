@@ -1,0 +1,41 @@
+Index: JavaBotGroupProg/src/main/java/org/example/currency/impl/CRPTest.java
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/currency/impl/CRPTest.java b/JavaBotGroupProg/src/main/java/org/example/currency/impl/CRPTest.java
+deleted file mode 100644
+--- a/JavaBotGroupProg/src/main/java/org/example/currency/impl/CRPTest.java	(revision a017432879bb126d9052855f644c4639810012a3)
++++ /dev/null	(revision a017432879bb126d9052855f644c4639810012a3)
+@@ -1,16 +0,0 @@
+-package org.example.currency.impl;
+-
+-import org.example.currency.Currency;
+-
+-public class CRPTest {
+-
+-    public static void main(String[] args) {
+-        CurrencyServiceImpl csi = new CurrencyServiceImpl();
+-        double rate = csi.getRate(Currency.USD);
+-
+-        CurrencyRatePrettierImpl crpi = new CurrencyRatePrettierImpl();
+-        String pretty = crpi.pretty(rate, Currency.USD);
+-        System.out.println(pretty);
+-    }
+-
+-}
+Index: JavaBotGroupProg/src/main/java/org/example/currency/impl/CSTest.java
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/currency/impl/CSTest.java b/JavaBotGroupProg/src/main/java/org/example/currency/impl/CSTest.java
+deleted file mode 100644
+--- a/JavaBotGroupProg/src/main/java/org/example/currency/impl/CSTest.java	(revision a017432879bb126d9052855f644c4639810012a3)
++++ /dev/null	(revision a017432879bb126d9052855f644c4639810012a3)
+@@ -1,11 +0,0 @@
+-package org.example.currency.impl;
+-
+-import org.example.currency.Currency;
+-
+-public class CSTest {
+-
+-    public static void main(String[] args) {
+-        CurrencyServiceImpl currencyService = new CurrencyServiceImpl();
+-        System.out.println("currencyService.getRate(Currency.USD) = " + currencyService.getRate(Currency.USD));
+-    }
+-}

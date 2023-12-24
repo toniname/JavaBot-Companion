@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_23_12_2023_17_57_[Changes]" date="1703347041329" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2023_17_57_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 23.12.2023 17:57 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2023_17_57_[Changes]/SelectBank.class" />
+  </binary>
+</changelist>

@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="init commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="master" />
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+                <branch-info repo="$PROJECT_DIR$" source="origin/main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master2" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2ZrSUuKXmdBzskYenIZjmbYVVun" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppLauncher.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Toni/IdeaProjects/JavaBot-Companion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="org.example.telegram" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="AppLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.AppLauncher" />
+      <module name="JavaBot-Companion" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AppLauncher" />
+        <item itemvalue="Application.AppLauncher" />
+        <item itemvalue="Application.AppLauncher" />
+        <item itemvalue="Application.AppLauncher" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-3183f394aec4-8f899f12" />
+        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-f0552fc0" />
+        <option value="jdk-21.0.1-openjdk-21.0.1-3183f394aec4-7d648f2c" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="" />
+      <created>1703178723283</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703178723283</updated>
+      <workItem from="1703178724286" duration="4620000" />
+      <workItem from="1703189629318" duration="16732000" />
+      <workItem from="1703248040775" duration="677000" />
+      <workItem from="1703263818870" duration="16577000" />
+      <workItem from="1703290575057" duration="1855000" />
+      <workItem from="1703316557614" duration="23145000" />
+      <workItem from="1703340009779" duration="269000" />
+      <workItem from="1703343796033" duration="20772000" />
+      <workItem from="1703406405579" duration="25856000" />
+    </task>
+    <task id="LOCAL-00001" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703329464061</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703329464061</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703329499770</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703329499770</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703329557666</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703329557666</updated>
+    </task>
+    <task id="LOCAL-00004" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703333096123</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333096123</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703333110592</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333110592</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703333212214</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333212214</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703333246285</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333246285</updated>
+    </task>
+    <task id="LOCAL-00008" summary="test for future pull request">
+      <option name="closed" value="true" />
+      <created>1703333270120</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333270120</updated>
+    </task>
+    <task id="LOCAL-00009" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703333282299</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333282299</updated>
+    </task>
+    <task id="LOCAL-00010" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703333605901</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333605901</updated>
+    </task>
+    <task id="LOCAL-00011" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703333624391</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703333624391</updated>
+    </task>
+    <task id="LOCAL-00012" summary="init commit3">
+      <option name="closed" value="true" />
+      <created>1703334572118</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703334572118</updated>
+    </task>
+    <task id="LOCAL-00013" summary="init commit3">
+      <option name="closed" value="true" />
+      <created>1703334590986</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703334590986</updated>
+    </task>
+    <task id="LOCAL-00014" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703335376105</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703335376105</updated>
+    </task>
+    <task id="LOCAL-00015" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703335402283</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703335402283</updated>
+    </task>
+    <task id="LOCAL-00016" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703335424034</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703335424034</updated>
+    </task>
+    <task id="LOCAL-00017" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703335459093</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703335459093</updated>
+    </task>
+    <task id="LOCAL-00018" summary="test for future pull request2">
+      <option name="closed" value="true" />
+      <created>1703335478790</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703335478790</updated>
+    </task>
+    <task id="LOCAL-00019" summary="test for future pull request3">
+      <option name="closed" value="true" />
+      <created>1703338876810</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1703338876810</updated>
+    </task>
+    <task id="LOCAL-00020" summary="test for future pull request4">
+      <option name="closed" value="true" />
+      <created>1703353930058</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1703353930058</updated>
+    </task>
+    <task id="LOCAL-00021" summary="test for future pull request4">
+      <option name="closed" value="true" />
+      <created>1703354120786</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1703354120786</updated>
+    </task>
+    <task id="LOCAL-00022" summary="init commit3">
+      <option name="closed" value="true" />
+      <created>1703354521401</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1703354521401</updated>
+    </task>
+    <task id="LOCAL-00023" summary="init commit3">
+      <option name="closed" value="true" />
+      <created>1703354589390</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1703354589390</updated>
+    </task>
+    <task id="LOCAL-00024" summary="init commit4">
+      <option name="closed" value="true" />
+      <created>1703356296187</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1703356296187</updated>
+    </task>
+    <task id="LOCAL-00025" summary="init commit4">
+      <option name="closed" value="true" />
+      <created>1703415375575</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1703415375575</updated>
+    </task>
+    <task id="LOCAL-00026" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703415532690</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1703415532690</updated>
+    </task>
+    <task id="LOCAL-00027" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703415592300</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1703415592300</updated>
+    </task>
+    <task id="LOCAL-00028" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703415755754</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1703415755754</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Merge branch 'master' of https://github.com/toniname/JavaBot-Companion&#10;&#10;# Conflicts:&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/Banks.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade$1.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/sort/CurrencyRatePrettierImpl.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/userdata/SelectedOptions.class">
+      <option name="closed" value="true" />
+      <created>1703416096090</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1703416096090</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Merge branch 'master' of https://github.com/toniname/JavaBot-Companion&#10;&#10;# Conflicts:&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/Banks.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade$1.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/sort/CurrencyRatePrettierImpl.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/userdata/SelectedOptions.class">
+      <option name="closed" value="true" />
+      <created>1703416222083</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1703416222083</updated>
+    </task>
+    <task id="LOCAL-00031" summary="init commit5">
+      <option name="closed" value="true" />
+      <created>1703424476923</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1703424476923</updated>
+    </task>
+    <task id="LOCAL-00032" summary="init commit5">
+      <option name="closed" value="true" />
+      <created>1703425627031</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1703425627031</updated>
+    </task>
+    <task id="LOCAL-00033" summary="init commit5">
+      <option name="closed" value="true" />
+      <created>1703431108002</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1703431108002</updated>
+    </task>
+    <task id="LOCAL-00034" summary="add 🔙">
+      <option name="closed" value="true" />
+      <created>1703431146987</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1703431146987</updated>
+    </task>
+    <task id="LOCAL-00035" summary="add 🔙">
+      <option name="closed" value="true" />
+      <created>1703431171825</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1703431171825</updated>
+    </task>
+    <task id="LOCAL-00036" summary="change Maine to App">
+      <option name="closed" value="true" />
+      <created>1703432020471</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1703432020471</updated>
+    </task>
+    <task id="LOCAL-00037" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703441630572</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1703441630572</updated>
+    </task>
+    <task id="LOCAL-00038" summary="init commit">
+      <option name="closed" value="true" />
+      <created>1703442284899</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1703442284899</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test for future pull request" />
+    <MESSAGE value="testButton" />
+    <MESSAGE value="test for future pull request2" />
+    <MESSAGE value="Merge branch 'master2' of https://github.com/toniname/JavaBot-Companion into master2&#10;&#10;# Conflicts:&#10;#&#9;JavaBotGroupProg/.idea/compiler.xml&#10;#&#9;JavaBotGroupProg/pom.xml&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/LoginAndToken.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/TelegramBotService.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currecy/impl/Currency.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currecy/impl/CurrencyService.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/LoginAndToken.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/TelegramBotService.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" />
+    <MESSAGE value="test for future pull request3" />
+    <MESSAGE value="test for future pull request4" />
+    <MESSAGE value="init commit3" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/toniname/JavaBot-Companion&#10;&#10;# Conflicts:&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/Currency.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/CurrencyRatePrettier.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/CurrencyService.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/impl/Banks.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/impl/Currency.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/impl/nbu/CurrencyServiceImplNBU.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/currency/sort/CurrencyRatePrettierImpl.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/Currency.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/CurrencyRatePrettier.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/Banks.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/Currency.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/nbu/CurrencyServiceImplNBU.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/sort/CurrencyRatePrettierImpl.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot$1.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/TelegramBotService.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" />
+    <MESSAGE value="init commit4" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/toniname/JavaBot-Companion&#10;&#10;# Conflicts:&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java&#10;#&#9;JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/Banks.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade$1.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/impl/CurrencyServicesFacade.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/currency/sort/CurrencyRatePrettierImpl.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class&#10;#&#9;JavaBotGroupProg/target/classes/org/example/telegram/userdata/SelectedOptions.class" />
+    <MESSAGE value="init commit5" />
+    <MESSAGE value="add " />
+    <MESSAGE value="change Maine to App" />
+    <MESSAGE value="init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

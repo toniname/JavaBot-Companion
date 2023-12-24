@@ -1,0 +1,71 @@
+Index: JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.currecy.impl;\r\n\r\npublic interface CurrencyService {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java b/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java
+--- a/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java	(revision 144e985a6dc8ea73fa4e8c287c8b2de64b81d598)
++++ b/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyService.java	(date 1703440654972)
+@@ -1,4 +1,6 @@
+ package org.example.currecy.impl;
+ 
++
+ public interface CurrencyService {
++    double getRate(Currency ccy);
+ }
+Index: JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyRatePrettier.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.currecy.impl;\r\n\r\npublic interface CurrencyRatePrettier {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyRatePrettier.java b/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyRatePrettier.java
+--- a/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyRatePrettier.java	(revision 144e985a6dc8ea73fa4e8c287c8b2de64b81d598)
++++ b/JavaBotGroupProg/src/main/java/org/example/currecy/impl/CurrencyRatePrettier.java	(date 1703440632280)
+@@ -1,4 +1,5 @@
+ package org.example.currecy.impl;
+ 
+ public interface CurrencyRatePrettier {
+-}
++    String pretty(double buyRate, double saleRate, Currency ccy);
++}
+\ No newline at end of file
+Index: JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.currecy.impl;\r\n\r\npublic enum Currency {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java b/JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java
+--- a/JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java	(revision 144e985a6dc8ea73fa4e8c287c8b2de64b81d598)
++++ b/JavaBotGroupProg/src/main/java/org/example/currecy/impl/Currency.java	(date 1703440621057)
+@@ -1,4 +1,7 @@
+ package org.example.currecy.impl;
+ 
+ public enum Currency {
+-}
++    USD,
++    EUR,
++    UAH
++}
+\ No newline at end of file
+Index: JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example.telegram.command;\r\n\r\npublic class StartCommand {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java b/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java
+--- a/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java	(revision 144e985a6dc8ea73fa4e8c287c8b2de64b81d598)
++++ b/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java	(date 1703440758393)
+@@ -2,4 +2,5 @@
+ 
+ public class StartCommand {
+ 
++
+ }

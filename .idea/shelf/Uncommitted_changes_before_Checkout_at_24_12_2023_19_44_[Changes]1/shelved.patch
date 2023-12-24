@@ -1,0 +1,14 @@
+Index: .idea/JavaBot-Companion.iml
+===================================================================
+diff --git a/.idea/JavaBot-Companion.iml b/.idea/JavaBot-Companion.iml
+deleted file mode 100644
+--- a/.idea/JavaBot-Companion.iml	
++++ /dev/null	
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module version="4">
+-  <component name="AdditionalModuleElements">
+-    <content url="file://$MODULE_DIR$" />
+-  </component>
+-</module>
+\ No newline at end of file

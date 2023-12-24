@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1" date="1703439896629" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 24.12.2023 19:44 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/SelectTime.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/StartCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/SelectPrecisoin.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoPB.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoPB.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/CurrencyItemDtoPB.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/CurrencyItemDtoNBU.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/CurrencyTelegramBot.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/SelectBank.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU$CurrencyItemDtoNBUBuilder.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU$CurrencyItemDtoNBUBuilder.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/CurrencyItemDtoNBU$CurrencyItemDtoNBUBuilder.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/SettingsCommand.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" />
+    <option name="AFTER_PATH" value="JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_12_2023_19_44_[Changes]1/SelectCurrency.class" />
+  </binary>
+</changelist>
