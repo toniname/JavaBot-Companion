@@ -41,7 +41,7 @@ public class SelectCurrency extends BotCommand {
 
         InlineKeyboardButton btn5 = InlineKeyboardButton
                 .builder()
-                .text("Back")
+                .text("\uD83D\uDD19Back")
                 .callbackData("back")
                 .build();
 
