@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/BackButton.java" afterDir="false" />
+    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="fix mistake">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecisoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecisoin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken2.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU$CurrencyItemDtoNBUBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU$CurrencyItemDtoNBUBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoNBU.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoPB.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/currency/dto/CurrencyItemDtoPB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/CurrencyTelegramBot.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectPrecisoin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +105,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
@@ -157,14 +166,7 @@
       <workItem from="1703340009779" duration="269000" />
       <workItem from="1703343796033" duration="20772000" />
       <workItem from="1703406405579" duration="25856000" />
-    </task>
-    <task id="LOCAL-00001" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703329464061</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1703329464061</updated>
+      <workItem from="1703507632231" duration="9405000" />
     </task>
     <task id="LOCAL-00002" summary="test for future pull request">
       <option name="closed" value="true" />
@@ -494,7 +496,71 @@
       <option name="project" value="LOCAL" />
       <updated>1703447741295</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="fix button">
+      <option name="closed" value="true" />
+      <created>1703457214342</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1703457214342</updated>
+    </task>
+    <task id="LOCAL-00044" summary="fix button">
+      <option name="closed" value="true" />
+      <created>1703457271206</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1703457271206</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add help">
+      <option name="closed" value="true" />
+      <created>1703463760639</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1703463760639</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fix mistake">
+      <option name="closed" value="true" />
+      <created>1703508410183</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1703508410183</updated>
+    </task>
+    <task id="LOCAL-00047" summary="fix mistake">
+      <option name="closed" value="true" />
+      <created>1703508433857</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1703508433857</updated>
+    </task>
+    <task id="LOCAL-00048" summary="fix mistake">
+      <option name="closed" value="true" />
+      <created>1703509178008</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1703509178008</updated>
+    </task>
+    <task id="LOCAL-00049" summary="fix mistake">
+      <option name="closed" value="true" />
+      <created>1703509190591</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1703509190591</updated>
+    </task>
+    <task id="LOCAL-00050" summary="fix mistake">
+      <option name="closed" value="true" />
+      <created>1703518286215</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1703518286216</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -529,7 +595,10 @@
     <MESSAGE value="init commit2" />
     <MESSAGE value="init commit" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/main'" />
+    <MESSAGE value="fix button" />
+    <MESSAGE value="add help" />
+    <MESSAGE value="fix mistake" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix mistake" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
