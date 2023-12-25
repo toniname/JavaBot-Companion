@@ -5,7 +5,7 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKe
 public class BackButton {
     public static InlineKeyboardButton createBackButton() {
         return InlineKeyboardButton.builder()
-                .text("\uD83D\uDD19Back")
+                .text("\uD83D\uDD19")
                 .callbackData("back")
                 .build();
     }

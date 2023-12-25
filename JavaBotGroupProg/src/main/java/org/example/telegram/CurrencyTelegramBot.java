@@ -22,6 +22,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
+import org.apache.log4j.Logger;
 
 import static sun.net.ftp.FtpReplyCode.HELP_MESSAGE;
 
@@ -29,7 +30,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     private final Pattern commandPattern = Pattern.compile("/\\w+");
 
     public static final Map<Long, SelectedOptions>  usersOptions = new HashMap<>();
-
+private static final Logger log = Logger.getLogger(CurrencyTelegramBot.class);
     private static final CurrencyServicesFacade currencyServicesFacade = new CurrencyServicesFacade();
     private static final CurrencyRatePrettierImpl prettier = new CurrencyRatePrettierImpl();
 
