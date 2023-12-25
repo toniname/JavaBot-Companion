@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="clean">
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp__CurrencyItemDtoPB.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -164,30 +164,6 @@
       <workItem from="1703340009779" duration="269000" />
       <workItem from="1703343796033" duration="20772000" />
       <workItem from="1703406405579" duration="25856000" />
-    </task>
-    <task id="LOCAL-00002" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703329499770</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1703329499770</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703329557666</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703329557666</updated>
-    </task>
-    <task id="LOCAL-00004" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703333096123</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703333096123</updated>
     </task>
     <task id="LOCAL-00005" summary="test for future pull request">
       <option name="closed" value="true" />
@@ -557,7 +533,31 @@
       <option name="project" value="LOCAL" />
       <updated>1703546219618</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703546736970</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1703546736970</updated>
+    </task>
+    <task id="LOCAL-00052" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703546797316</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1703546797316</updated>
+    </task>
+    <task id="LOCAL-00053" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703546945579</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1703546945579</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

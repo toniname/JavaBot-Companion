@@ -1,7 +1,5 @@
 package org.example.telegram.command;
 
-import org.example.telegram.CurrencyTelegramBot;
-import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -28,7 +26,6 @@ public class SelectTime extends BotCommand {
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
-        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
         sm.setReplyMarkup(createKeyboardMarkup());
 

@@ -38,14 +38,14 @@ public class SettingsCommand extends BotCommand {
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
-                .text("Час")
-                .callbackData("time")
+                .text("Кількість знаків після коми")
+                .callbackData("precision")
                 .build();
 
         InlineKeyboardButton btn4 = InlineKeyboardButton
                 .builder()
-                .text("Число знаків після коми")
-                .callbackData("precision")
+                .text("Час")
+                .callbackData("time")
                 .build();
 
         InlineKeyboardButton backButton = BackButton.createBackButton();
