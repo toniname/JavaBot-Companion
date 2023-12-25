@@ -4,7 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 import org.example.currency.impl.Currency;
 
-
 @Data
 @Builder
 public class CurrencyItemDtoNBU {

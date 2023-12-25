@@ -14,7 +14,7 @@ public class CurrencyServicesFacade {
         switch (bank) {
             case NBU -> currencyService = new CurrencyServiceImplNBU();
             case MONO -> currencyService = new CurrencyServiceImplMONO();
-            case PRIVATE -> currencyService =  new CurrencyServiceImplPB();
+            case PRIVATE -> currencyService = new CurrencyServiceImplPB();
         }
     }
 
@@ -27,9 +27,4 @@ public class CurrencyServicesFacade {
         setBank(bank);
         return currencyService.getBuyRate(ccy);
     }
-
-   // public double getRate(Currency ccy, Banks bank) throws IOException {
-     //   setBank(bank);
-       // return currencyService.getRate(ccy);
-    //}
 }

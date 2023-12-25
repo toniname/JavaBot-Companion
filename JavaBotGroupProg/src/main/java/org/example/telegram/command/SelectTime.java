@@ -18,7 +18,7 @@ import java.util.List;
 public class SelectTime extends BotCommand {
 
     public SelectTime() {
-        super("selecttime", "Select Time");
+        super("selecttime", "Вибір часу сповіщень");
     }
 
     @Override
@@ -30,7 +30,6 @@ public class SelectTime extends BotCommand {
         sm.setChatId(chat.getId());
         SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
 
-
         sm.setReplyMarkup(createKeyboardMarkup());
 
         try {
@@ -40,7 +39,7 @@ public class SelectTime extends BotCommand {
         }
     }
 
-    private KeyboardButton creatKeyboardButton (String txt){
+    private KeyboardButton creatKeyboardButton(String txt) {
         return KeyboardButton
                 .builder()
                 .text(txt)
@@ -61,7 +60,6 @@ public class SelectTime extends BotCommand {
         KeyboardRow disableRow = new KeyboardRow();
         disableRow.add(disableButton);
         rows.add(disableRow);
-
         return ReplyKeyboardMarkup.builder().keyboard(rows).build();
     }
 }

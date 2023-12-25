@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.example.currency.impl.Currency;
 
-
 @Data
 @AllArgsConstructor
 public class CurrencyItemDtoPB {
@@ -12,5 +11,4 @@ public class CurrencyItemDtoPB {
     private Currency base_ccy;
     private String buy;
     private String sale;
-
 }

@@ -1,4 +1,5 @@
 package org.example.currency.impl.mono;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.example.currency.impl.Currency;
@@ -8,15 +9,16 @@ import org.jsoup.Jsoup;
 
 import java.io.IOException;
 import java.lang.reflect.Type;
-
 import java.util.List;
 
 public class CurrencyServiceImplMONO implements CurrencyService {
 
     private static final String url = "https://api.monobank.ua/bank/currency";
+
     private static List<CurrencyItemDtoMONO> allCurrencies;
 
     private final static long cacheTime = 5 * 60;
+
     private static long lastRequestTime;
 
     @Override

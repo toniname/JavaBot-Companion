@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="buy/sale" />
+    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="buy/sale">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/AppLauncher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/CurrencyRatePrettier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoMONO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoMONO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoNBU.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoNBU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Banks.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Banks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyServicesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyServicesFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/mono/CurrencyServiceImplMONO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/mono/CurrencyServiceImplMONO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/nbu/CurrencyServiceImplNBU.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/nbu/CurrencyServiceImplNBU.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/pb/CurrencyServiceImplPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/pb/CurrencyServiceImplPB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/sort/CurrencyRatePrettierImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/sort/CurrencyRatePrettier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/TelegramBotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/TelegramBotService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/BackButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/BackButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecisoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecision.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,34 +108,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AppLauncher.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
-    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Toni/IdeaProjects/JavaBot-Companion/.idea/vcs.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppLauncher.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Toni/IdeaProjects/JavaBot-Companion/.idea/vcs.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
-      &quot;directory&quot;,
-      &quot;module&quot;
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="org.example.telegram" />
@@ -523,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703542230813</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="buy/sale">
+      <option name="closed" value="true" />
+      <created>1703542596936</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1703542596936</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

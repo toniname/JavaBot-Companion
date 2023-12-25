@@ -1,4 +1,5 @@
 package org.example.currency.impl.pb;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.example.currency.impl.Currency;
@@ -25,7 +26,6 @@ public class CurrencyServiceImplPB implements CurrencyService {
         CurrencyItemDtoPB neededDto = getDtoObject(ccy);
         return Double.parseDouble(neededDto.getBuy());
     }
-
 
     public CurrencyItemDtoPB getDtoObject(Currency ccy) throws IOException {
         doRequest();

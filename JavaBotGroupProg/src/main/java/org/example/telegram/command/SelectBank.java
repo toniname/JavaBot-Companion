@@ -15,11 +15,10 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class SelectBank extends BotCommand {
 
     public SelectBank() {
-        super("selectBank", "select specific bank");
+        super("selectBank", "Вибір банку");
     }
 
     private static final Logger logger = Logger.getLogger(SelectBank.class.getName());
@@ -27,17 +26,10 @@ public class SelectBank extends BotCommand {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         String text = "\uD83C\uDFE6 Виберіть банк \uD83C\uDFE6";
-
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
-
-
-
         SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
-
-
-
         InlineKeyboardMarkup ikm = createBankButtons(selectedOptions);
         sm.setReplyMarkup(ikm);
 
@@ -54,15 +46,12 @@ public class SelectBank extends BotCommand {
                 createButton("Приватбанк", "private", selectedOptions.getSelectedBank()),
                 createButton("НБУ", "nbu", selectedOptions.getSelectedBank()),
                 createButton("\uD83D\uDD19", "back", "")
-
         );
-
         return InlineKeyboardMarkup.builder().keyboard(buttons).build();
     }
 
     private List<InlineKeyboardButton> createButton(String bankName, String callbackData, String selectedBank) {
-
-        String buttonText = bankName + (selectedBank.equalsIgnoreCase(callbackData) ?  "✅" : "");
+        String buttonText = bankName + (selectedBank.equalsIgnoreCase(callbackData) ? "✅" : "");
         return List.of(InlineKeyboardButton.builder().text(buttonText).callbackData(callbackData).build());
     }
 }

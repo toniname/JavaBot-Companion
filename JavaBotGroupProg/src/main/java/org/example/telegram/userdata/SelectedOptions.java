@@ -17,10 +17,7 @@ public class SelectedOptions {
     @Getter
     private String precision = "2";
 
-
-
     private final Set<String> currency = new HashSet<>();
-
 
     private String time = null;
 
@@ -32,13 +29,9 @@ public class SelectedOptions {
         setDefault();
     }
 
-
-
     public void push(BotCommand command) {
-
         if (!history.isEmpty() && history.peek().getClass().equals(command.getClass()))
             return;
-
         history.push(command);
     }
 
@@ -48,7 +41,6 @@ public class SelectedOptions {
             return history.pop();
         return new StartCommand();
     }
-
 
     public void setDefault() {
         banks.put("mono", "✅");
@@ -65,7 +57,6 @@ public class SelectedOptions {
 
     public synchronized boolean setTime(String timeToSet) {
         int intTime;
-
         try {
             intTime = Integer.parseInt(timeToSet);
         } catch (NumberFormatException e) {
@@ -119,7 +110,6 @@ public class SelectedOptions {
     public Set<String> getSelectedCurrency() {
         return currency;
     }
-
 
     public void setCurrency(String ccy) {
         if (currency.contains(ccy))

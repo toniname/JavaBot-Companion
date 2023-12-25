@@ -14,21 +14,18 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 
 public class StartCommand extends BotCommand {
 
     public StartCommand() {
-        super("start", "start command will initiate currency bot");
+        super("start", "Команда старт ініціалізує бота");
     }
-
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         String text = "\uD83D\uDCB2 Виберіть валюту, яку хочете перевірити \uD83D\uDCB2";
-
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
@@ -49,7 +46,6 @@ public class StartCommand extends BotCommand {
                 .build();
 
         sm.setReplyMarkup(ikm);
-
 
         if (!CurrencyTelegramBot.getUsersOptions().containsKey(chat.getId())) {
             SelectedOptions newEntity = new SelectedOptions();

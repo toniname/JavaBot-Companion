@@ -13,15 +13,15 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
 
-public class SelectPrecisoin extends BotCommand {
+public class SelectPrecision extends BotCommand {
 
-    public SelectPrecisoin() {
-        super("/setprecision", "set n of digits after floating point");
+    public SelectPrecision() {
+        super("/setprecision", "Встановлення кількості знаків після коми");
     }
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "Виберіть число знаків після коми";
+        String text = "Виберіть кількість знаків після коми";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);

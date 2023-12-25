@@ -1,6 +1,5 @@
 package org.example.currency.dto;
 
-
 import lombok.Data;
 
 @Data
