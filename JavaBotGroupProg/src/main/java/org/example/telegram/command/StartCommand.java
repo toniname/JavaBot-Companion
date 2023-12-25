@@ -14,6 +14,7 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -57,12 +58,12 @@ public class StartCommand extends BotCommand {
         }
         SendPhoto sendPhoto = new SendPhoto();
         sendPhoto.setChatId(chat.getId().toString());
-        sendPhoto.setPhoto(new InputFile(new File("JavaBotGroupProg/src/main/java/org/example/images/patron.gif")));
+        sendPhoto.setPhoto(new InputFile(new File("./src/main/java/org/example/images/patron.gif")));
         try {
             absSender.execute(sendPhoto);
             absSender.execute(sm);
         } catch (TelegramApiException e) {
             System.out.println("Error");
         }
-        }
+    }
 }
