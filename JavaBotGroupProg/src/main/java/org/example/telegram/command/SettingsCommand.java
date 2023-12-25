@@ -53,7 +53,7 @@ public class SettingsCommand extends BotCommand {
 
 
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(backButton)))
+                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(backButton) ) )
                 .build();
 
         sm.setReplyMarkup(ikm);

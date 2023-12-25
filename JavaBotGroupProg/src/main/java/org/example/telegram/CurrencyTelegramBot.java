@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
@@ -98,7 +99,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                 sm.setText("Вибраний час скасовано");
             }
         } else {
-            sm.setText("Час не активовано для цього користувача");
+            sm.setText("Невідома команда \u2639");
         }
         try {
             execute(sm);
@@ -142,32 +143,53 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             }
         }
 
+
+        System.out.println(callbackData);
         return command;
     }
 
     private void sendRateMessage(long chatId) {
         SelectedOptions selectedOptions = usersOptions.get(chatId);
         String msg;
-        Currency selectedCurrency = Currency.valueOf(selectedOptions.getSelectedCurrency().toUpperCase());
-        Banks selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
 
-        double rate;
-        try {
-            rate = currencyServicesFacade.getRate(selectedCurrency, selectedBank);
-            msg = "Обраний банк " + selectedBank.name() + ", обрана валюта: " + selectedCurrency + ", курс : " +
-                    prettier.roundNum(rate, Integer.parseInt(selectedOptions.getPrecision()));
-        } catch (IOException e) {
-            msg = "Something went wrong";
-            e.printStackTrace();
+        if (selectedOptions.getSelectedCurrency().isEmpty()) {
+            SendMessage sm = new SendMessage();
+            msg = "Будь ласка виберіть валюту";
+            sm.setChatId(chatId);
+            sm.setText(msg);
+            try {
+                execute(sm);
+            } catch (TelegramApiException e) {
+                throw new RuntimeException(e);
+            }
+
+            return;
         }
 
-        SendMessage sm = new SendMessage();
-        sm.setChatId(chatId);
-        sm.setText(msg);
-        try {
-            execute(sm);
-        } catch (TelegramApiException e) {
-            throw new RuntimeException(e);
+        String[] selectedCurrencies =  selectedOptions.getSelectedCurrency().toArray(String[]::new);
+        Banks selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
+
+        for (int i = 0; i < selectedCurrencies.length; i++) {
+            Currency selectedCurrency = Currency.valueOf(selectedCurrencies[i].toUpperCase());
+
+            double rate;
+            try {
+                rate = currencyServicesFacade.getRate(selectedCurrency, selectedBank);
+                msg = "Обраний банк " + selectedBank.name() + ", обрана валюта: " + selectedCurrency + ", курс : " +
+                        prettier.roundNum(rate, Integer.parseInt(selectedOptions.getPrecision()));
+            } catch (IOException e) {
+                msg = "Something went wrong";
+                e.printStackTrace();
+            }
+
+            SendMessage sm = new SendMessage();
+            sm.setChatId(chatId);
+            sm.setText(msg);
+            try {
+                execute(sm);
+            } catch (TelegramApiException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
