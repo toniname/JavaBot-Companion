@@ -26,7 +26,7 @@ public class SelectBank extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "\uD83C\uDFE6 Виберіть банк \uD83C\uDFE6";
+        String text = "\uD83C\uDFE6 Оберіть банк \uD83C\uDFE6";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);
