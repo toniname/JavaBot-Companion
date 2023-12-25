@@ -165,14 +165,6 @@
       <workItem from="1703343796033" duration="20772000" />
       <workItem from="1703406405579" duration="25856000" />
     </task>
-    <task id="LOCAL-00001" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703329464061</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1703329464061</updated>
-    </task>
     <task id="LOCAL-00002" summary="test for future pull request">
       <option name="closed" value="true" />
       <created>1703329499770</created>
@@ -549,7 +541,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703545306524</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703545841554</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1703545841554</updated>
+    </task>
+    <task id="LOCAL-00050" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703546219618</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1703546219618</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
