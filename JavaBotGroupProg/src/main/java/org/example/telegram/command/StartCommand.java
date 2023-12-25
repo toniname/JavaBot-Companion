@@ -14,6 +14,7 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -64,5 +65,5 @@ public class StartCommand extends BotCommand {
         } catch (TelegramApiException e) {
             System.out.println("Error");
         }
-        }
+    }
 }
