@@ -11,24 +11,21 @@ import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingC
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.helpCommand.HelpCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import static sun.net.ftp.FtpReplyCode.HELP_MESSAGE;
-
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
-    private final Pattern commandPattern = Pattern.compile("/\\w+");
+    private final Pattern commandPattern = Pattern.compile("/\\S+");
 
-    public static final Map<Long, SelectedOptions>  usersOptions = new HashMap<>();
+    public static final Map<Long, SelectedOptions> usersOptions = new HashMap<>();
 
     private static final CurrencyServicesFacade currencyServicesFacade = new CurrencyServicesFacade();
     private static final CurrencyRatePrettierImpl prettier = new CurrencyRatePrettierImpl();
@@ -103,7 +100,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         } else {
             sm.setText("Час не активовано для цього користувача");
         }
-
         try {
             execute(sm);
         } catch (TelegramApiException e) {
@@ -118,7 +114,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
         if (callbackData.contains("setprecision")) {
             usersOptions.get(update.getCallbackQuery().getMessage().getChatId())
-                    .setPrecision(callbackData.substring(callbackData.length()-1));
+                    .setPrecision(callbackData.substring(callbackData.length() - 1));
             callbackData = "precision";
         }
 
@@ -151,7 +147,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
     private void sendRateMessage(long chatId) {
         SelectedOptions selectedOptions = usersOptions.get(chatId);
-        String msg ;
+        String msg;
         Currency selectedCurrency = Currency.valueOf(selectedOptions.getSelectedCurrency().toUpperCase());
         Banks selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
 
@@ -174,35 +170,24 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             throw new RuntimeException(e);
         }
     }
+
     private void commandHelp(Update update) throws TelegramApiException {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText();
-            if ("/help".equals(message)) {
+            if (!commandPattern.matcher(message).matches()) {
+                SendMessage responseMessage = new SendMessage();
+                responseMessage.setText("Ви ввели текст який бот не може розпізнати🤷🏼‍♂️\n" + "Цей бот знає ось такі команди: \n" + "/start ~ /help");
+                responseMessage.setChatId(update.getMessage().getChatId());
+                execute(responseMessage);
+            } else if ("/help".equals(message)) {
                 HelpCommand helpCommand = new HelpCommand();
                 helpCommand.execute(this, update.getMessage().getFrom(), update.getMessage().getChat(), null);
             }
-            if (!commandPattern.matcher(message).matches()) {
-                SendMessage responseMessage = new SendMessage();
-                responseMessage.setText("Ви ввели текст який бот не може розпізнати🤷🏼‍♂️\n" + "Це бот знає ось такі команди: \n" + "/start ~ /help");
-                responseMessage.setChatId(update.getMessage().getChatId());
-                execute(responseMessage);
-            }
         }
     }
-    private static void incorrectUserInput(AbsSender absSender, Message message) throws TelegramApiException {
-        SendMessage responseMessage = new SendMessage();
-        responseMessage.setText("Ви ввели команду який бот не може розпізнати🤷🏼‍♂️\n" + "Це бот знає ось такі команди: \n" + "/start ~ /help");
-        responseMessage.setChatId(message.getChatId());
-        absSender.execute(responseMessage);
-    }
-    public void execute(AbsSender absSender, User user, Chat chat, String[] strings) throws TelegramApiException {
-        SendMessage message = new SendMessage();
-        message.setChatId(chat.getId());
-        message.setText(String.valueOf(HELP_MESSAGE));
-        absSender.execute(message);
-    }
+
     private void startNotificationsThread() {
-        Thread thread = new Thread ( () -> {
+        Thread thread = new Thread(() -> {
             while (true) {
                 Calendar rightNow = Calendar.getInstance();
                 int hour = rightNow.get(Calendar.HOUR_OF_DAY);
