@@ -4,34 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="buy/sale">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/AppLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/AppLauncher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/CurrencyRatePrettier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoMONO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoMONO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoNBU.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoNBU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/dto/CurrencyItemDtoPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Banks.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Banks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/Currency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyServicesFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/CurrencyServicesFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/mono/CurrencyServiceImplMONO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/mono/CurrencyServiceImplMONO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/nbu/CurrencyServiceImplNBU.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/nbu/CurrencyServiceImplNBU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/pb/CurrencyServiceImplPB.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/impl/pb/CurrencyServiceImplPB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/sort/CurrencyRatePrettierImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/currency/sort/CurrencyRatePrettier.java" afterDir="false" />
+    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="clean">
       <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/TelegramBotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/TelegramBotService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/BackButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/BackButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecisoin.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectPrecision.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/LoginAndToken2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/userdata/SelectedOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -559,7 +533,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703542596936</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703545272150</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1703545272150</updated>
+    </task>
+    <task id="LOCAL-00048" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703545306524</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1703545306524</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +585,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
     <MESSAGE value="init commit" />
     <MESSAGE value="buy/sale" />
-    <option name="LAST_COMMIT_MESSAGE" value="buy/sale" />
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
