@@ -196,7 +196,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             if (!commandPattern.matcher(message).matches()) {
                 SendMessage responseMessage = new SendMessage();
                 responseMessage.setText("""
-                        Ви ввели текст який бот не може розпізнати🤷🏼‍♂️
+                        Ви ввели текст, який бот не може розпізнати🤷🏼‍♂️
                         Цей бот знає ось такі команди:\s
                         /start ~ /help""");
                 responseMessage.setChatId(update.getMessage().getChatId());
