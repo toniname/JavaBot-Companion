@@ -160,7 +160,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         }
 
         String[] selectedCurrencies = selectedOptions.getSelectedCurrency().toArray(String[]::new);
-        Banks selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
+        Banks selectedBank;
 
         for (String currency : selectedCurrencies) {
             Currency selectedCurrency = Currency.valueOf(currency.toUpperCase());
@@ -195,7 +195,10 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             String message = update.getMessage().getText();
             if (!commandPattern.matcher(message).matches()) {
                 SendMessage responseMessage = new SendMessage();
-                responseMessage.setText("Ви ввели текст який бот не може розпізнати🤷🏼‍♂️\n" + "Цей бот знає ось такі команди: \n" + "/start ~ /help");
+                responseMessage.setText("""
+                        Ви ввели текст який бот не може розпізнати🤷🏼‍♂️
+                        Цей бот знає ось такі команди:\s
+                        /start ~ /help""");
                 responseMessage.setChatId(update.getMessage().getChatId());
                 execute(responseMessage);
             } else if ("/help".equals(message)) {
