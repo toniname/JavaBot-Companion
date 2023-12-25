@@ -18,9 +18,9 @@ public class CurrencyServicesFacade {
         }
     }
 
-    public double getSellRate(Currency ccy, Banks bank) throws IOException {
+    public double getSaleRate(Currency ccy, Banks bank) throws IOException {
         setBank(bank);
-        return currencyService.getSellRate(ccy);
+        return currencyService.getSaleRate(ccy);
     }
 
     public double getBuyRate(Currency ccy, Banks bank) throws IOException {
@@ -28,8 +28,8 @@ public class CurrencyServicesFacade {
         return currencyService.getBuyRate(ccy);
     }
 
-    public double getRate(Currency ccy, Banks bank) throws IOException {
-        setBank(bank);
-        return currencyService.getRate(ccy);
-    }
+   // public double getRate(Currency ccy, Banks bank) throws IOException {
+     //   setBank(bank);
+       // return currencyService.getRate(ccy);
+    //}
 }

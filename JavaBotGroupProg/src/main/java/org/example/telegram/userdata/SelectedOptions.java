@@ -5,9 +5,7 @@ import lombok.Setter;
 import org.example.telegram.command.StartCommand;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 public class SelectedOptions {
 
@@ -18,8 +16,10 @@ public class SelectedOptions {
 
     @Getter
     private String precision = "2";
-    private String currency = "usd";
 
+
+
+    private final Set<String> currency = new HashSet<>();
 
 
     private String time = null;
@@ -54,6 +54,8 @@ public class SelectedOptions {
         banks.put("mono", "✅");
         banks.put("private", "");
         banks.put("nbu", "");
+
+        currency.add("usd");
     }
 
     public void setSelectedBank(String key) {
@@ -100,7 +102,7 @@ public class SelectedOptions {
     }
 
     public String isSelectedCurrency(String key) {
-        if (currency.equals(key))
+        if (currency.contains(key.toLowerCase()))
             return "✅";
         return "";
     }
@@ -114,12 +116,16 @@ public class SelectedOptions {
         return null;
     }
 
-    public String getSelectedCurrency() {
+    public Set<String> getSelectedCurrency() {
         return currency;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+
+    public void setCurrency(String ccy) {
+        if (currency.contains(ccy))
+            currency.remove(ccy);
+        else
+            this.currency.add(ccy);
     }
 
     @Override

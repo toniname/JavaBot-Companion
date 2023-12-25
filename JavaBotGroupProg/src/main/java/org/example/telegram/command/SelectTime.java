@@ -65,4 +65,3 @@ public class SelectTime extends BotCommand {
         return ReplyKeyboardMarkup.builder().keyboard(rows).build();
     }
 }
-

@@ -5,9 +5,9 @@ import lombok.Data;
 
 @Data
 public class CurrencyItemDtoMONO {
-    public int currencyCodeA;
-    public int currencyCodeB;
-    public int date;
-    public double rateBuy;
-    public double rateSell;
+    private int currencyCodeA;
+    private int currencyCodeB;
+    private int date;
+    private double rateBuy;
+    private double rateSell;
 }

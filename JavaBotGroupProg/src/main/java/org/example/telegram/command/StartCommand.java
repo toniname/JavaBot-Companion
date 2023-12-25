@@ -26,7 +26,7 @@ public class StartCommand extends BotCommand {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "\uD83D\uDCB2 Виберіть валюту яку хочете перевірити \uD83D\uDCB2";
+        String text = "\uD83D\uDCB2 Виберіть валюту, яку хочете перевірити \uD83D\uDCB2";
 
         SendMessage sm = new SendMessage();
         sm.setText(text);

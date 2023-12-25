@@ -55,4 +55,3 @@ public class SelectCurrency extends BotCommand {
         }
     }
 }
-
