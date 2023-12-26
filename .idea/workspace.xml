@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="init commit6">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c9116b76-7c70-4ee4-a77a-2b3e3e081817" name="Changes" comment="clean">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/CurrencyTelegramBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectBank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SelectCurrency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/SettingsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/src/main/java/org/example/telegram/command/StartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectBank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SelectCurrency.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/SettingsCommand.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" beforeDir="false" afterPath="$PROJECT_DIR$/JavaBotGroupProg/target/classes/org/example/telegram/command/StartCommand.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,8 +73,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_1_CurrencyItemDtoPB.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp_2_CurrencyItemDtoPB.class" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Temp/tmp__CurrencyItemDtoPB.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -79,28 +90,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.AppLauncher.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
-    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Toni/IdeaProjects/JavaBot-Companion/.idea/vcs.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AppLauncher.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Toni/IdeaProjects/JavaBot-Companion/.idea/vcs.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="org.example.telegram" />
@@ -155,24 +172,6 @@
       <workItem from="1703340009779" duration="269000" />
       <workItem from="1703343796033" duration="20772000" />
       <workItem from="1703406405579" duration="25856000" />
-      <workItem from="1703507632231" duration="19003000" />
-      <workItem from="1703599256463" duration="721000" />
-    </task>
-    <task id="LOCAL-00004" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703333096123</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703333096123</updated>
-    </task>
-    <task id="LOCAL-00005" summary="test for future pull request">
-      <option name="closed" value="true" />
-      <created>1703333110592</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1703333110592</updated>
     </task>
     <task id="LOCAL-00006" summary="test for future pull request">
       <option name="closed" value="true" />
@@ -470,87 +469,103 @@
       <option name="project" value="LOCAL" />
       <updated>1703447741295</updated>
     </task>
-    <task id="LOCAL-00043" summary="fix button">
+    <task id="LOCAL-00043" summary="init commit">
       <option name="closed" value="true" />
-      <created>1703457214342</created>
+      <created>1703517535393</created>
       <option name="number" value="00043" />
       <option name="presentableId" value="LOCAL-00043" />
       <option name="project" value="LOCAL" />
-      <updated>1703457214342</updated>
+      <updated>1703517535393</updated>
     </task>
-    <task id="LOCAL-00044" summary="fix button">
+    <task id="LOCAL-00044" summary="buy/sale">
       <option name="closed" value="true" />
-      <created>1703457271206</created>
+      <created>1703542098804</created>
       <option name="number" value="00044" />
       <option name="presentableId" value="LOCAL-00044" />
       <option name="project" value="LOCAL" />
-      <updated>1703457271206</updated>
+      <updated>1703542098804</updated>
     </task>
-    <task id="LOCAL-00045" summary="add help">
+    <task id="LOCAL-00045" summary="buy/sale">
       <option name="closed" value="true" />
-      <created>1703463760639</created>
+      <created>1703542230813</created>
       <option name="number" value="00045" />
       <option name="presentableId" value="LOCAL-00045" />
       <option name="project" value="LOCAL" />
-      <updated>1703463760639</updated>
+      <updated>1703542230813</updated>
     </task>
-    <task id="LOCAL-00046" summary="fix mistake">
+    <task id="LOCAL-00046" summary="buy/sale">
       <option name="closed" value="true" />
-      <created>1703508410183</created>
+      <created>1703542596936</created>
       <option name="number" value="00046" />
       <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1703508410183</updated>
+      <updated>1703542596936</updated>
     </task>
-    <task id="LOCAL-00047" summary="fix mistake">
+    <task id="LOCAL-00047" summary="clean">
       <option name="closed" value="true" />
-      <created>1703508433857</created>
+      <created>1703545272150</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1703508433857</updated>
+      <updated>1703545272150</updated>
     </task>
-    <task id="LOCAL-00048" summary="fix mistake">
+    <task id="LOCAL-00048" summary="clean">
       <option name="closed" value="true" />
-      <created>1703509178008</created>
+      <created>1703545306524</created>
       <option name="number" value="00048" />
       <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1703509178008</updated>
+      <updated>1703545306524</updated>
     </task>
-    <task id="LOCAL-00049" summary="fix mistake">
+    <task id="LOCAL-00049" summary="clean">
       <option name="closed" value="true" />
-      <created>1703509190591</created>
+      <created>1703545841554</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1703509190591</updated>
+      <updated>1703545841554</updated>
     </task>
-    <task id="LOCAL-00050" summary="fix mistake">
+    <task id="LOCAL-00050" summary="clean">
       <option name="closed" value="true" />
-      <created>1703518286215</created>
+      <created>1703546219618</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1703518286216</updated>
+      <updated>1703546219618</updated>
     </task>
-    <task id="LOCAL-00051" summary="fix mistake">
+    <task id="LOCAL-00051" summary="clean">
       <option name="closed" value="true" />
-      <created>1703536547870</created>
+      <created>1703546736970</created>
       <option name="number" value="00051" />
       <option name="presentableId" value="LOCAL-00051" />
       <option name="project" value="LOCAL" />
-      <updated>1703536547870</updated>
+      <updated>1703546736970</updated>
     </task>
-    <task id="LOCAL-00052" summary="init commit6">
+    <task id="LOCAL-00052" summary="clean">
       <option name="closed" value="true" />
-      <created>1703541053077</created>
+      <created>1703546797316</created>
       <option name="number" value="00052" />
       <option name="presentableId" value="LOCAL-00052" />
       <option name="project" value="LOCAL" />
-      <updated>1703541053077</updated>
+      <updated>1703546797316</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703546945579</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1703546945579</updated>
+    </task>
+    <task id="LOCAL-00054" summary="clean">
+      <option name="closed" value="true" />
+      <created>1703547343960</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1703547343960</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,13 +598,11 @@
     <MESSAGE value="change Maine to App" />
     <MESSAGE value="Resolve merge conflict in .idea/vcs.xml" />
     <MESSAGE value="init commit2" />
-    <MESSAGE value="init commit" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
-    <MESSAGE value="fix button" />
-    <MESSAGE value="add help" />
-    <MESSAGE value="fix mistake" />
-    <MESSAGE value="init commit6" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit6" />
+    <MESSAGE value="init commit" />
+    <MESSAGE value="buy/sale" />
+    <MESSAGE value="clean" />
+    <option name="LAST_COMMIT_MESSAGE" value="clean" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

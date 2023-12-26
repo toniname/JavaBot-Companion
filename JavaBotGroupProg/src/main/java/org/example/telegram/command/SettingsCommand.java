@@ -14,7 +14,7 @@ import java.util.List;
 public class SettingsCommand extends BotCommand {
 
     public SettingsCommand() {
-        super("settings", "setings of the options");
+        super("settings", "Налаштування");
     }
 
     @Override
@@ -27,33 +27,31 @@ public class SettingsCommand extends BotCommand {
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Банк")
+                .text("\uD83C\uDFE6 Банк \uD83C\uDFE6")
                 .callbackData("bank")
                 .build();
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Валюта")
+                .text("\uD83E\uDE99 Валюта \uD83E\uDE99")
                 .callbackData("currency")
                 .build();
 
         InlineKeyboardButton btn3 = InlineKeyboardButton
                 .builder()
-                .text("Час")
-                .callbackData("time")
+                .text("Кількість знаків після коми")
+                .callbackData("precision")
                 .build();
 
         InlineKeyboardButton btn4 = InlineKeyboardButton
                 .builder()
-                .text("Число знаків після коми")
-                .callbackData("precision")
+                .text("⏰ Час ⏰")
+                .callbackData("time")
                 .build();
-
 
         InlineKeyboardButton backButton = BackButton.createBackButton();
 
-
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(backButton) ) )
+                .keyboard(List.of(List.of(btn1), List.of(btn2), List.of(btn3), List.of(btn4), List.of(backButton)))
                 .build();
 
         sm.setReplyMarkup(ikm);

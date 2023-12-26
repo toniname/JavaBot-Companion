@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.example.currency.impl.Currency;
 
-
 @Data
 @AllArgsConstructor
 public class CurrencyItemDtoPB {

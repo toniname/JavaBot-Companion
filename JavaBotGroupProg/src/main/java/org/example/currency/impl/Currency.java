@@ -1,6 +1,5 @@
 package org.example.currency.impl;
 
-
 import lombok.Getter;
 
 @Getter

@@ -1,7 +1,5 @@
 package org.example.telegram.command;
 
-import org.example.telegram.CurrencyTelegramBot;
-import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -18,7 +16,7 @@ import java.util.List;
 public class SelectTime extends BotCommand {
 
     public SelectTime() {
-        super("selecttime", "Select Time");
+        super("selecttime", "Вибір часу сповіщень");
     }
 
     @Override
@@ -28,8 +26,6 @@ public class SelectTime extends BotCommand {
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
-        SelectedOptions selectedOptions = CurrencyTelegramBot.getUsersOptions().get(chat.getId());
-
 
         sm.setReplyMarkup(createKeyboardMarkup());
 
@@ -40,7 +36,7 @@ public class SelectTime extends BotCommand {
         }
     }
 
-    private KeyboardButton creatKeyboardButton (String txt){
+    private KeyboardButton creatKeyboardButton(String txt) {
         return KeyboardButton
                 .builder()
                 .text(txt)
@@ -61,8 +57,6 @@ public class SelectTime extends BotCommand {
         KeyboardRow disableRow = new KeyboardRow();
         disableRow.add(disableButton);
         rows.add(disableRow);
-
         return ReplyKeyboardMarkup.builder().keyboard(rows).build();
     }
 }
-

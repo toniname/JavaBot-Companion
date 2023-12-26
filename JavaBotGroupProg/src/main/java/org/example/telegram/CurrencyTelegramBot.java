@@ -3,9 +3,9 @@ package org.example.telegram;
 import org.example.currency.impl.Banks;
 import org.example.currency.impl.Currency;
 import org.example.currency.impl.CurrencyServicesFacade;
-import org.example.currency.sort.CurrencyRatePrettierImpl;
+import org.example.currency.sort.CurrencyRatePrettier;
 import org.example.telegram.command.*;
-import org.example.telegram.userdata.LoginAndToken2;
+import org.example.telegram.userdata.LoginAndToken;
 import org.example.telegram.userdata.SelectedOptions;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
@@ -18,23 +18,20 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 import java.util.regex.Pattern;
 
 public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
     private final Pattern commandPattern = Pattern.compile("/\\S+");
-
     public static final Map<Long, SelectedOptions> usersOptions = new HashMap<>();
-
     private static final CurrencyServicesFacade currencyServicesFacade = new CurrencyServicesFacade();
-    private static final CurrencyRatePrettierImpl prettier = new CurrencyRatePrettierImpl();
+    private static final CurrencyRatePrettier prettier = new CurrencyRatePrettier();
 
     public CurrencyTelegramBot() {
         register(new HelpCommand());
         register(new StartCommand());
         register(new SettingsCommand());
         register(new SelectBank());
-        register(new SelectPrecisoin());
+        register(new SelectPrecision());
         register(new SelectCurrency());
         register(new SelectTime());
 
@@ -43,12 +40,12 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotUsername() {
-        return LoginAndToken2.NAME;
+        return LoginAndToken.NAME;
     }
 
     @Override
     public String getBotToken() {
-        return LoginAndToken2.TOKEN;
+        return LoginAndToken.TOKEN;
     }
 
     public static synchronized Map<Long, SelectedOptions> getUsersOptions() {
@@ -121,7 +118,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             case "settings" -> command = new SettingsCommand();
             case "bank" -> command = new SelectBank();
             case "currency" -> command = new SelectCurrency();
-            case "precision" -> command = new SelectPrecisoin();
+            case "precision" -> command = new SelectPrecision();
             case "back" -> command = usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).pop();
             case "mono", "nbu", "private" -> {
                 usersOptions.get(update.getCallbackQuery().getMessage().getChatId()).setSelectedBank(callbackData);
@@ -140,8 +137,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                 return null;
             }
         }
-
-
         System.out.println(callbackData);
         return command;
     }
@@ -164,17 +159,21 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
             return;
         }
 
-        String[] selectedCurrencies =  selectedOptions.getSelectedCurrency().toArray(String[]::new);
-        Banks selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
+        String[] selectedCurrencies = selectedOptions.getSelectedCurrency().toArray(String[]::new);
+        Banks selectedBank;
 
-        for (int i = 0; i < selectedCurrencies.length; i++) {
-            Currency selectedCurrency = Currency.valueOf(selectedCurrencies[i].toUpperCase());
+        for (String currency : selectedCurrencies) {
+            Currency selectedCurrency = Currency.valueOf(currency.toUpperCase());
+            selectedBank = Banks.valueOf(selectedOptions.getSelectedBank().toUpperCase());
 
-            double rate;
+            double rateBuy;
+            double rateSale;
             try {
-                rate = currencyServicesFacade.getRate(selectedCurrency, selectedBank);
-                msg = "Обраний банк " + selectedBank.name() + ", обрана валюта: " + selectedCurrency + ", курс : " +
-                        prettier.roundNum(rate, Integer.parseInt(selectedOptions.getPrecision()));
+                rateBuy = currencyServicesFacade.getBuyRate(selectedCurrency, selectedBank);
+                rateSale = currencyServicesFacade.getSaleRate(selectedCurrency, selectedBank);
+
+                msg = "Обраний банк " + selectedBank.name() + ", \nКурс " + selectedCurrency + ":\nКупівля: " +
+                        prettier.roundNum(rateBuy, Integer.parseInt(selectedOptions.getPrecision())) + "; Продаж: " + prettier.roundNum(rateSale, Integer.parseInt(selectedOptions.getPrecision()));
             } catch (IOException e) {
                 msg = "Something went wrong";
                 e.printStackTrace();
@@ -191,7 +190,23 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         }
     }
 
-
+    private void commandHelp(Update update) throws TelegramApiException {
+        if (update.hasMessage() && update.getMessage().hasText()) {
+            String message = update.getMessage().getText();
+            if (!commandPattern.matcher(message).matches()) {
+                SendMessage responseMessage = new SendMessage();
+                responseMessage.setText("""
+                        Ви ввели текст, який бот не може розпізнати🤷🏼‍♂️
+                        Цей бот знає ось такі команди:\s
+                        /start ~ /help""");
+                responseMessage.setChatId(update.getMessage().getChatId());
+                execute(responseMessage);
+            } else if ("/help".equals(message)) {
+                HelpCommand helpCommand = new HelpCommand();
+                helpCommand.execute(this, update.getMessage().getFrom(), update.getMessage().getChat(), null);
+            }
+        }
+    }
 
     private void startNotificationsThread() {
         Thread thread = new Thread(() -> {
@@ -202,7 +217,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                 getUsersOptions().keySet().stream()
                         .filter((k) -> getUsersOptions().get(k).getTime() == hour)
                         .forEach(this::sendRateMessage);
-
                 try {
                     Thread.sleep(1000 * 60 * 60);
                 } catch (InterruptedException e) {
@@ -210,7 +224,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                 }
             }
         });
-
         thread.start();
     }
 }

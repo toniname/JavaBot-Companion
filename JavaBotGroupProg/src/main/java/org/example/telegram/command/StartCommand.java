@@ -14,42 +14,48 @@ import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StartCommand extends BotCommand {
 
     public StartCommand() {
-        super("start", "start command will initiate currency bot");
+        super("start", "Команда старт ініціалізує бота");
     }
-
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
-        String text = "\uD83D\uDCB2 Виберіть валюту яку хочете перевірити \uD83D\uDCB2";
-
+        String text = "\uD83D\uDCB2 Виберіть валюту, яку хочете перевірити \uD83D\uDCB2";
         SendMessage sm = new SendMessage();
         sm.setText(text);
         sm.setChatId(chat.getId());
 
         InlineKeyboardButton settingsButton = InlineKeyboardButton
                 .builder()
-                .text("Налаштування")
+                .text("⚙ Налаштування ⚙")
                 .callbackData("settings")
                 .build();
         InlineKeyboardButton infoButton = InlineKeyboardButton
                 .builder()
-                .text("Отримати інформацію")
+                .text("\uD83D\uDCB1 Отримати інформацію \uD83D\uDCB1")
                 .callbackData("info")
                 .build();
 
+        List<List<InlineKeyboardButton>> keyboard = new ArrayList<>();
+
+        List<InlineKeyboardButton> k1 = new ArrayList<>();
+        k1.add(settingsButton);
+
+        List<InlineKeyboardButton> k2 = new ArrayList<>();
+        k2.add(infoButton);
+        keyboard.add(k1);
+        keyboard.add(k2);
+
         InlineKeyboardMarkup ikm = InlineKeyboardMarkup.builder()
-                .keyboard(Collections.singletonList(Arrays.asList(settingsButton, infoButton)))
+                .keyboard(keyboard)
                 .build();
 
         sm.setReplyMarkup(ikm);
-
 
         if (!CurrencyTelegramBot.getUsersOptions().containsKey(chat.getId())) {
             SelectedOptions newEntity = new SelectedOptions();
