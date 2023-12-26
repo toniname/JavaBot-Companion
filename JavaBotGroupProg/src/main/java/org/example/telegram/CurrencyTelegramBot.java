@@ -94,7 +94,9 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                 sm.setText("Вибраний час скасовано");
             }
         } else {
-            sm.setText("Невідома команда \u2639");
+            sm.setText("Ви ввели текст, який бот не може розпізнати\uD83E\uDD37\uD83C\uDFFC\u200D♂\uFE0F\n" +
+                    "                        Цей бот знає ось такі команди:s\n" +
+                    "                        /start ~ /help");
         }
         try {
             execute(sm);
@@ -186,24 +188,6 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
                 execute(sm);
             } catch (TelegramApiException e) {
                 throw new RuntimeException(e);
-            }
-        }
-    }
-
-    private void commandHelp(Update update) throws TelegramApiException {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            String message = update.getMessage().getText();
-            if (!commandPattern.matcher(message).matches()) {
-                SendMessage responseMessage = new SendMessage();
-                responseMessage.setText("""
-                        Ви ввели текст, який бот не може розпізнати🤷🏼‍♂️
-                        Цей бот знає ось такі команди:\s
-                        /start ~ /help""");
-                responseMessage.setChatId(update.getMessage().getChatId());
-                execute(responseMessage);
-            } else if ("/help".equals(message)) {
-                HelpCommand helpCommand = new HelpCommand();
-                helpCommand.execute(this, update.getMessage().getFrom(), update.getMessage().getChat(), null);
             }
         }
     }
