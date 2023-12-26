@@ -27,12 +27,12 @@ public class SettingsCommand extends BotCommand {
 
         InlineKeyboardButton btn1 = InlineKeyboardButton
                 .builder()
-                .text("Банк")
+                .text("\uD83C\uDFE6 Банк \uD83C\uDFE6")
                 .callbackData("bank")
                 .build();
         InlineKeyboardButton btn2 = InlineKeyboardButton
                 .builder()
-                .text("Валюта")
+                .text("\uD83E\uDE99 Валюта \uD83E\uDE99")
                 .callbackData("currency")
                 .build();
 
@@ -44,7 +44,7 @@ public class SettingsCommand extends BotCommand {
 
         InlineKeyboardButton btn4 = InlineKeyboardButton
                 .builder()
-                .text("Час")
+                .text("⏰ Час ⏰")
                 .callbackData("time")
                 .build();
 
