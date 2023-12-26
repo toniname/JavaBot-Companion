@@ -11,9 +11,7 @@ import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingC
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.helpCommand.HelpCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.io.IOException;
@@ -193,20 +191,7 @@ public class CurrencyTelegramBot extends TelegramLongPollingCommandBot {
         }
     }
 
-    private void commandHelp(Update update) throws TelegramApiException {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            String message = update.getMessage().getText();
-            if (!commandPattern.matcher(message).matches()) {
-                SendMessage responseMessage = new SendMessage();
-                responseMessage.setText("Ви ввели текст який бот не може розпізнати🤷🏼‍♂️\n" + "Цей бот знає ось такі команди: \n" + "/start ~ /help");
-                responseMessage.setChatId(update.getMessage().getChatId());
-                execute(responseMessage);
-            } else if ("/help".equals(message)) {
-                HelpCommand helpCommand = new HelpCommand();
-                helpCommand.execute(this, update.getMessage().getFrom(), update.getMessage().getChat(), null);
-            }
-        }
-    }
+
 
     private void startNotificationsThread() {
         Thread thread = new Thread(() -> {
